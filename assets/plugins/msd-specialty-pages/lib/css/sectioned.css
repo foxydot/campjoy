@@ -1,0 +1,73 @@
+.msdlab_meta_control .table {
+  display: block;
+  width: 100%;
+}
+.msdlab_meta_control .row {
+  display: block;
+  cursor: move;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #ccc;
+  *zoom: 1;
+}
+.msdlab_meta_control .row:before,
+.msdlab_meta_control .row:after,
+.msdlab_meta_control .row .cell:before,
+.msdlab_meta_control .row .cell:after {
+  content: " ";
+  /* 1 */
+  display: table;
+  /* 2 */
+}
+.msdlab_meta_control .row:after,
+.msdlab_meta_control .row .cell:after {
+  clear: both;
+}
+.msdlab_meta_control .box,
+.msdlab_meta_control .footer {
+  margin: 20px 0;
+  padding: 20px 0;
+  border-top: 1px solid #ccc;
+}
+.msdlab_meta_control .cell {
+  display: block;
+  clear: both;
+  margin-left: 1rem;
+}
+.msdlab_meta_control .cell label {
+  display: block;
+  font-weight: bold;
+  margin-right: 1%;
+  float: left;
+  width: 14%;
+  text-align: right;
+}
+.msdlab_meta_control .cell .input_container {
+  width: 85%;
+  float: left;
+}
+.msdlab_meta_control .cell .input_container .file input[type="text"] {
+  width: 70%;
+}
+.msdlab_meta_control .cell .input_container input[type="color"] {
+  height: 30px;
+  width: 40px;
+}
+.msdlab_meta_control .cell .input_container textarea,
+.msdlab_meta_control .cell .input_container input[type='text'],
+.msdlab_meta_control .cell .input_container select,
+.msdlab_meta_control .cell .input_container .wp-editor-wrap {
+  display: inline;
+  margin-bottom: 3px;
+  width: 90%;
+}
+.msdlab_meta_control .even {
+  background: #eee;
+}
+.msdlab_meta_control .odd {
+  background: #fff;
+}
+.msdlab_meta_control .cols-2,
+.msdlab_meta_control .cols-3,
+.msdlab_meta_control .cols-4 {
+  display: none;
+}

@@ -1,0 +1,40 @@
+/*
+Site Footer
+---------------------------------------------------------------------------------------------------- */
+
+.site-footer, .footer-phone{
+  background-color: @black;
+  color: @white;
+  .customheader(1);
+  text-align: center; 
+   p {
+    margin-bottom: 0;
+  }
+  .wrap{
+    position: relative;
+    .social, .footer-menu{
+      display: inline-block;
+      a {
+        color: @green;
+        &:hover{color: @white;}
+      }
+    }
+    .backtotop{
+      display: none;
+      position: absolute;
+      right: 0;
+      top: -2px;
+      background-color: @white;
+      border-radius: 0 0 20% 20%;
+      height: 2.4rem;
+      width: 2.4rem;
+      text-align: center;
+      a{
+        color: @green;
+        font-size: 2em;
+        line-height: 1;
+      }
+    }
+  }
+}
+.footer-phone{}

@@ -1,0 +1,210 @@
+/* Pre Header */
+.pre-header{
+  background: @white;
+  .wrap{
+    text-align: right;
+    .header-widget-area{
+      text-align: right;
+      line-height: 0;
+      .widget{
+        width: auto;
+        display: inline-block;
+        color: @ltgrey;
+      }
+    }
+  }
+}
+
+/*
+Site Header
+---------------------------------------------------------------------------------------------------- */
+
+.site-header {
+  min-height: 450px;
+  background-position: top center;
+  background-repeat: no-repeat;
+}
+
+.site-header .wrap {
+  padding: 40px 0;
+  padding: 4rem 0;
+}
+
+/* Title Area
+--------------------------------------------- */
+
+.title-area {
+  float: left;
+  .customheader();
+  font-weight: 700;
+  padding: 16px 0;
+  padding: 1.6rem 0;
+}
+
+.header-image .title-area {
+  padding: 0;
+}
+
+.site-title {
+  font-size: 28px;
+  font-size: 2.8rem;
+  line-height: 1;
+  margin: 0 0 8px;
+  margin: 0 0 0.8rem;
+  text-transform: uppercase;
+  background-color: @black;
+  float: left;
+}
+
+.site-title a,
+.site-title a:hover {
+  color: #333;
+  
+}
+
+.site-description {
+  .customserif(2.4);
+  color: @black;
+  font-weight: 300;
+  line-height: 1;
+  float: left;
+  width: 30rem;
+  margin: 7rem 0 0 2rem;
+}
+
+/* Full width header, no widgets */
+
+.header-full-width .title-area,
+.header-full-width .site-title {
+  /*width: 100%;*/
+}
+
+.header-image .site-title{ 
+  .skew(150);
+  padding: 2.5rem;
+  margin: 30px 0 0 40px;
+  margin: 3rem 0 0 4rem;
+  a {
+    display: block;
+    text-indent: -9999px;
+    .skew(30);
+    min-height: 50px;
+    width: 200px;
+    height: 50px;
+    background: url(../img/logo.png) no-repeat center left;
+    background-size: contain;
+  }
+}
+
+/* Logo, hide text */
+
+.header-image .site-header .wrap {
+  padding: 0;
+}
+
+/* Widget Area
+--------------------------------------------- */
+
+.site-header .widget-area, .pre-header .widget-area {
+  float: right;
+  text-align: right;
+  clear: right;
+  line-height: 1;
+  .widget{
+    display: inline-block;
+  }
+  .widget_nav_menu{
+    position: relative;
+    top: -0.8rem;
+    nav{
+      ul{
+        li{
+          padding: 0.4rem;
+          border: 1px solid @vltgrey;
+          margin-left: -0.4rem;
+          a{
+            padding: 0;
+            text-transform: uppercase;
+            font-size: 1rem;
+            color: @ltgrey;
+          }
+          a:after{
+            .fontawesome;
+            padding: 0 0.2rem 0 0.4rem;
+          }
+        }
+        li.register{
+          border-radius: 6px 0 0 6px;
+          a:after{
+            content: "\f007";
+          }
+        }
+        li.login{
+          border-radius: 0 6px 6px 0;
+          border-left: 0;
+          a:after{
+            content: "\f023";
+          }
+        }
+        li:hover{
+          a{
+            color: @mdgrey;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+  }
+    .search-form{
+      display: inline-block;
+      padding: 0;
+      margin-top: 3rem;
+      margin-left: 1rem;
+      position: relative;
+      whitespace: nowrap;
+      input[type="search"] {
+        font-size: 1.4rem;
+        width: 25rem;
+        background: white;
+        padding: 0.6rem 2.4rem 0.6rem 1rem;
+        border: 0;
+        border-right: 1px solid @offwhite;
+        border-radius: 2px;
+        line-height: 1;
+        height: 30px;
+        -webkit-transition: width 0.5s linear;
+-moz-transition: width 0.5s linear;
+-ms-transition: width 0.5s linear;
+-o-transition: width 0.5s linear;
+transition: width 0.5s linear;
+      }
+      input[type="submit"] {
+        .fontawesome;
+        background: @green;
+        border: 0 none;
+        border-radius: 2px;
+        clip: auto;
+        color: @white;
+        display: inline-block;
+        font-size: 1.2rem;
+        height: 30px;
+        line-height: 1;
+        text-align: center;
+        width: 36px;
+        right: 0rem;
+        top: 0rem;
+      }
+      &:hover{
+        input[type="search"] {
+      }
+      }
+    }
+}
+
+.header-image .site-header .widget-area {
+  padding: 0;
+}
+
+.site-header .search-form {
+  float: right;
+}

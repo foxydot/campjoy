@@ -1,0 +1,83 @@
+.buttons, .control{
+	background:transparent;
+	border:1px solid #333;
+	padding: 0px 5px 0 6px;
+	margin: 0 0 0 9px;
+	line-height: 0px;
+	color: #FFFFFF;
+	text-decoration: none;
+}
+a.control, .control {
+	color:#555;
+	border:none;
+	font-size:em;
+	font-style:italic;
+}
+.active{
+	background:#333;
+	color: #777;
+	border:1px solid #333;
+}
+.buttons:hover {
+	background:#333;
+	border:1px solid #333;
+}
+div.contentWrap div.content {
+border-right:none;
+float:normal;
+margin:0;
+padding:0;
+position:relative;
+}
+div.buttonsWrap {
+text-align:right;
+margin-top:13px;
+padding-right:2px;
+float:right;
+}
+.buttons {
+font-size:7px;
+display:block;
+float:left;
+width:1px;
+height:7px;
+}
+.contentWrap a {
+color:#fff;
+}
+.contentWrap h1 {
+color:#fff;
+font-size:36px;
+line-height:1.3;
+margin-bottom:15px;
+}
+.contentWrap h2, .contentWrap h3, .contentWrap h4, .contentWrap h5, .contentWrap p {
+color:#ccc;
+}
+.contentWrap p {
+font-size:1.05em;
+}
+.contentWrap h5 {
+font-size:1.35em;
+}
+.contentWrap h1 span {
+color:#fa0;
+padding-right:.05em;
+}
+div.content {
+width:960px;
+height:340px;
+overflow:hidden;
+}
+div.content div {
+float:left;
+max-width:325px;
+padding:110px 45px 45px 65px;
+}
+div.content div.right {
+float:right;
+padding:25px 10px 35px;
+}
+div#slider {
+margin-bottom:0px;
+}
