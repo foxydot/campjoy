@@ -13,9 +13,13 @@ article.entry {
 }
 .entry-content{
   h3{
-    color: @blue;
+    color: @green;
+    font-weight: 300;
+  }
+  h4{
+    color: @green;
     text-transform: uppercase;
-    border-bottom: 1px dotted @medgrey;
+    font-weight: 700;
   }
 }
 .entry-content .attachment a,
@@ -42,7 +46,15 @@ article.entry {
 }
 
 .entry-content ul li {
-  list-style-type: disc;
+  list-style: none outside none;
+  margin-bottom: .25em;
+  margin-left: 1em;
+  text-indent: -1em;
+}
+.entry-content ul li:before {
+    font-family: 'FontAwesome';
+    content: '\f105';
+    margin:0 1rem 0 0;
 }
 
 .entry-content ol ol,
@@ -89,22 +101,22 @@ article.entry {
 }
 
 .entry-header{
-  .skew(150);
-  background-color: @green;
-  display: inline-block;
-  padding: 1em;
   .entry-title{
-    .customheader(4);
-    .skew(30);
+    .customheader(3.6);
     font-weight: 500;
-    color: @white;
+    color: @green;
     line-height: 1.25;
-    margin: 0;
   }
   .entry-subtitle{
-    .customheader(3.2);
+    .customheader(2.2);
     font-weight: 300;
-    color: @blue;
+    color: @ltgrey;
+    line-height: 1.25;
+  }
+  .client-name{
+    .customheader(1.8);
+    font-weight: 300;
+    color: @dkgrey;
     line-height: 1.25;
   }
 }

@@ -1,17 +1,5 @@
 <?php
 /**
- * Make a homepage with the section plugin
- */
-function msdlab_make_it_homepage(){
-    if(is_front_page()){
-        remove_action('genesis_entry_header', 'genesis_do_post_title');
-        add_action('genesis_after_header','msdlab_hero');
-        remove_action('genesis_before_footer','genesis_footer_widget_areas');
-        add_action('genesis_before_footer','msdlab_homepage_widgets',-4);
-        add_action('genesis_before_footer','genesis_footer_widget_areas');
-    }
-}
-/**
  * Alters loop params
  */
 function msdlab_alter_loop_params($query){
@@ -68,7 +56,7 @@ function msdlab_add_apple_touch_icons(){
  * Add pre-header with social and search
  */
 function msdlab_pre_header(){
-    print '<div id="pre-header" class="pre-header">
+    print '<div class="pre-header">
         <div class="wrap">';
            do_action('msdlab_pre_header');
     print '
@@ -79,12 +67,6 @@ function msdlab_pre_header(){
 register_nav_menus( array(
     'tab_menu' => 'TabNav Menu'
 ) );
-
-function msdlab_pre_header_sidebar(){
-    print '<div class="widget-area">';
-    dynamic_sidebar( 'pre-header' );
-    print '</div>';
-}
 function msdlab_do_tabnav(){
     if(has_nav_menu('tab_menu')){$tab_menu = wp_nav_menu( array( 'theme_location' => 'tab_menu','container_class' => 'menu genesis-nav-menu menu-tabs','echo' => FALSE, ) );}
     print '<nav id="tab_menu" class="tab-menu" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">'.$tab_menu.'</nav>';
@@ -112,15 +94,6 @@ function msdlab_header_right(){
             'xhtml' => '</div>',
         ) );
     }
-}
-
-//add featured image to page header
-function msdlab_header_attr( $attributes ){
-    global $post;
-    if(is_page()){
-        $attributes['style'] .= 'background-image: url('.msdlab_get_thumbnail_url($post->ID, 'full').');';
-    }
-    return $attributes;
 }
 
 function msdlab_do_header() {
@@ -246,21 +219,7 @@ function msdlab_ro_layout_logic() {
 /**
  * Move titles
  */
- 
-function msdlab_maybe_move_title(){
-    global $post;
-    $template_file = get_post_meta($post->ID,'_wp_page_template',TRUE);
-    if(is_page() && $template_file=='default'){
-        remove_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
-        add_action('msdlab_title_area','msdlab_do_section_title');
-        add_action('genesis_after_header','msdlab_do_title_area');
-    }
-}
- 
 function msdlab_do_title_area(){
-    if(is_front_page()){
-        return FALSE;
-    }
     global $post;
     $postid = is_admin()?$_GET['post']:$post->ID;
     $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
@@ -278,8 +237,19 @@ function msdlab_do_title_area(){
 function msdlab_do_section_title(){
     if(is_page()){
         global $post;
+        if(get_section_title()!=$post->post_title){
+            add_action('genesis_entry_header','genesis_do_post_title',5);
+        }
+        print '<div class="banner clearfix" style="background-image:url('.msdlab_get_thumbnail_url($post->ID,'full').')">';
+        print '<div class="texturize">';
+        print '<div class="gradient">';
         print '<div class="wrap">';
-        genesis_do_post_title();
+        print '<h2 class="section-title">';
+        print get_section_title();
+        print '</h2>';
+        print '</div>';
+        print '</div>';
+        print '</div>';
         print '</div>';
     } elseif(is_single()) {
         genesis_do_post_title();
@@ -317,11 +287,6 @@ function msdlab_newer_link_text($content) {
         return $newerlink;
 }
 
-//add_filter( 'genesis_attr_site-container', 'msdlab_background_site_container', 10);
-function msdlab_background_site_container( $attributes ){
-    $attributes['style'] .= 'background-image:url('.msdlab_get_thumbnail_url(null,'full').')';
-    return $attributes;
-}
 
 /**
  * Display links to previous and next post, from a single post.
@@ -562,38 +527,15 @@ function msdlab_do_social_footer(){
     if(has_nav_menu('footer_menu')){$footer_menu .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'menu genesis-nav-menu nav-footer','echo' => FALSE ) );}
     
     if($msd_social){
-        $digits = $msd_social->get_digits();
         $address = '<span itemprop="name">'.$msd_social->get_bizname().'</span> | <span itemprop="streetAddress">'.get_option('msdsocial_street').'</span>, <span itemprop="streetAddress">'.get_option('msdsocial_street2').'</span> | <span itemprop="addressLocality">'.get_option('msdsocial_city').'</span>, <span itemprop="addressRegion">'.get_option('msdsocial_state').'</span> <span itemprop="postalCode">'.get_option('msdsocial_zip').'</span> | '.$msd_social->get_digits();
         $copyright .= '&copy; Copyright '.date('Y').' '.$msd_social->get_bizname().' &middot; All Rights Reserved';
     } else {
         $copyright .= '&copy; Copyright '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
     }
-
     print '<div class="row">';
-    print '<span class="social">'.$copyright.'</span>';
     print '<nav class="footer-menu" itemtype="http://schema.org/SiteNavigationElement" itemscope="itemscope" role="navigation">'.$footer_menu.'</nav>';
+    print '<div class="social">'.$copyright.'</div>';
     print '</div>';
-    print '<div class="backtotop"><a href="#pre-header"><i class="fa fa-angle-up"></i></a></div>';
-}
-
-function msdlab_do_social_phone_footer(){
-    global $msd_social;
-    global $wp_filter;
-    //ts_var( $wp_filter['msdlab_title_area'] );
-    
-    if(has_nav_menu('footer_menu')){$footer_menu .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'menu genesis-nav-menu nav-footer','echo' => FALSE ) );}
-    
-    if($msd_social){
-        $digits = $msd_social->get_digits();
-        $address = '<span itemprop="name">'.$msd_social->get_bizname().'</span> | <span itemprop="streetAddress">'.get_option('msdsocial_street').'</span>, <span itemprop="streetAddress">'.get_option('msdsocial_street2').'</span> | <span itemprop="addressLocality">'.get_option('msdsocial_city').'</span>, <span itemprop="addressRegion">'.get_option('msdsocial_state').'</span> <span itemprop="postalCode">'.get_option('msdsocial_zip').'</span> | '.$msd_social->get_digits();
-        $copyright .= '&copy; Copyright '.date('Y').' '.$msd_social->get_bizname().' &middot; All Rights Reserved';
-    } else {
-        $copyright .= '&copy; Copyright '.date('Y').' '.get_bloginfo('name').' &middot; All Rights Reserved ';
-    }
-
-    print '<div class="footer-phone"><div class="wrap">';
-    print '<span class="social-phone">Contact Us: '.$digits.'</span>';
-    print '</div></div>';
 }
 
 /*** SITEMAP ***/

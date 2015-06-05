@@ -22,14 +22,16 @@ class KohlerConnected extends MSDConnected {
             print '</div>';
             //add_action( 'wp_footer', array(&$this,'tabindex_javascript'), 60);
         }
-        if(($address||$phone||$tollfree||$fax||$email||$social)&&$form_id > 0){
+        if(($address||$phone||$tollfree||$fax||$email||$additional_locations||$social)&&$form_id > 0){
             print '</div>';
         }
-        if(($address||$phone||$tollfree||$fax||$email||$social)&&$form_id > 0){
-            print '<div class="col-md-5 align-right">';
+        if(($address||$phone||$tollfree||$fax||$email||$additional_locations||$social)&&$form_id > 0){
+            print '<div class="col-md-5 col-right">';
         }
-        if ( $address ){
+        if ( $address || $additional_locations ){
             print '<h3>Address</h3>';
+        }
+        if( $address ){
             $bizname = do_shortcode('[msd-bizname]'); 
             if ( $bizname ){
                 print '<div class="connected-bizname">'.$bizname.'</div>';
@@ -83,6 +85,14 @@ class KohlerConnected extends MSDConnected {
             $email = (get_option('msdsocial_email')!='')?'Email: <span itemprop="email"><a href="mailto:'.antispambot(get_option('msdsocial_email')).'">'.antispambot(get_option('msdsocial_email')).'</a></span> ':'';
             if ( $email ){ print '<div class="connected-email">'.$email.'</div>'; }
         }
+        
+        if ( $additional_locations ){
+            $additional_locations = do_shortcode('[msd-additional-locations]'); 
+            if ( $additional_locations ){
+                print '<div class="connected-additional-locations">'.$additional_locations.'</div>';
+            }
+        }
+        
         if ( $social ){
             $social = do_shortcode('[msd-social]');
             if( $social ){ print '<div class="connected-social">'.$social.'</div>'; }

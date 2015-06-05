@@ -6,7 +6,7 @@ if(!class_exists('WPAlchemy_MetaBox')){
 add_action('init','add_custom_metaboxes');
 add_action('admin_footer','subtitle_footer_hook');
 add_action( 'admin_print_scripts', 'my_metabox_styles' );
-add_action( 'genesis_entry_header', 'msdlab_do_post_subtitle' );
+add_action( 'genesis_after_header', 'msdlab_do_post_subtitle' );
 
 
 function add_custom_metaboxes(){
@@ -50,7 +50,7 @@ function msdlab_do_post_subtitle() {
 	if ( strlen( $subtitle ) == 0 )
 		return;
 
-	$subtitle = sprintf( '<h2 class="entry-subtitle">%s</h2>', apply_filters( 'genesis_post_title_text', $subtitle ) );
+	$subtitle = sprintf( '<div class="subtitle-wrapper"><div class="wrap"><h2 class="entry-subtitle">%s</h2></div></div>', apply_filters( 'genesis_post_title_text', $subtitle ) );
 	echo apply_filters( 'genesis_post_title_output', $subtitle ) . "\n";
 
 }

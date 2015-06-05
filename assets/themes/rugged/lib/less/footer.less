@@ -2,39 +2,19 @@
 Site Footer
 ---------------------------------------------------------------------------------------------------- */
 
-.site-footer, .footer-phone{
+.site-footer {
   background-color: @black;
-  color: @white;
+  color: fade(@white, 50%);
   .customheader(1);
-  text-align: center; 
-   p {
+  text-transform: uppercase;
+  padding: 40px 0;
+  padding: 1rem 0;
+  text-align: center;
+  
+  p {
     margin-bottom: 0;
   }
-  .wrap{
-    position: relative;
-    .social, .footer-menu{
-      display: inline-block;
-      a {
-        color: @green;
-        &:hover{color: @white;}
-      }
-    }
-    .backtotop{
-      display: none;
-      position: absolute;
-      right: 0;
-      top: -2px;
-      background-color: @white;
-      border-radius: 0 0 20% 20%;
-      height: 2.4rem;
-      width: 2.4rem;
-      text-align: center;
-      a{
-        color: @green;
-        font-size: 2em;
-        line-height: 1;
-      }
-    }
+  a {
+    color: @white;
   }
 }
-.footer-phone{}

@@ -19,17 +19,8 @@ jQuery(document).ready(function($) {
 			return '<li class="separator">|</li>';
 		}
 	});
-	
-	$('.section.expandable .expand').click(function(){
-	    var target = $(this).parents('.section-body').find('.content');
-	    console.log(target);
-	    if(target.hasClass('open')){
-            target.removeClass('open');
-            $(this).html('MORE <i class="fa fa-angle-down"></i>');
-	    } else {
-	        target.addClass('open');
-	        $(this).html('LESS <i class="fa fa-angle-up"></i>');
-	    }
+	$('.mega-stack').removeClass('mega-menu-columns-2-of-8').wrapAll('<div class="stacked"></div>');
+	$('.mega-menu-item-type-widget').height(function(){
+	    return $(this).parent().height();
 	});
-	
 });
