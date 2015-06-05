@@ -179,6 +179,7 @@ if ( !function_exists('msdlab_has_shortcode') ) {
     }
 }
 
+
 /**
  * Check if a post is a particular post type.
  */

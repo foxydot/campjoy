@@ -1,84 +1,114 @@
-.pre-header{
-  .clearfix;
-  .connected-social{
-    .social-media{
-      float: right;
-      a.fa{
-        background: none;
-        color: @ltgrey;
-        height: auto;
-        line-height: inherit;
-      }
-      a.fa:hover{
-        line-height:inherit;
-        height: auto;
-      }
-      a.fa.last-child{
-        margin-right: 0;
-      }
-          
-       a.fa-facebook:hover{
-         color:@facebook;
-       }
-       a.fa-twitter:hover{
-         color:@twitter;
-       }
-       a.fa-pinterest:hover{
-         color:@pinterest;
-       }
-       a.fa-google-plus:hover{
-         color:@google;
-       }
-       a.fa-linkedin:hover{
-         color:@linkedin;
-       }
-       a.fa-instagram:hover{
-         color:@instagram;
-       }
-       a.fa-tumblr:hover{
-         color:@tumblr;
-       }
-       a.fa-reddit:hover{
-         color:@reddit;
-       }
-       a.fa-flickr:hover{
-         color:@flickr;
-       }
-       a.fa-youtube:hover{
-         color:@youtube;
-       }
-       a.fa-vimeo-square:hover{
-         color:@vimeo;
-       }
-       a.fa-vine:hover{
-         color:@vine;
-       }
-       a.fa-share-alt:hover{
-         color:@sharethis;
-       }
-       a.fa-envelope:hover{
-         color:@contact;
-       }
-       a.fa-rss:hover{
-         color:@rss;
-       }
-    }
+.site-inner{
+  background: @offwhite;
+  .widget{
+    background: @white;
   }
 }
 .page-title-area{
-  .arrow-down(@blue);
-  background-color: @blue;
-  .entry-title{
-      .customheader(3.6);
-      text-align: center;
-      text-transform: uppercase;
+  background: @dkgrey;
+  .banner{
+    background-repeat: no-repeat;
+        max-width: 1660px;
+        margin: 0 auto;
+    .texturize{
+      //background-image: url(../img/bkg-dots.png);
+      .gradient{
+        min-height: 400px;
+background: -moz-linear-gradient(left,  rgba(26,26,26,1) 0%, rgba(26,26,26,0.4) 10%, rgba(26,26,26,0.4) 90%, rgba(26,26,26,1) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(26,26,26,1)), color-stop(10%,rgba(26,26,26,0.4)), color-stop(90%,rgba(26,26,26,0.4)), color-stop(100%,rgba(26,26,26,1))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%,rgba(26,26,26,0.4) 90%,rgba(26,26,26,1) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%,rgba(26,26,26,0.4) 90%,rgba(26,26,26,1) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%,rgba(26,26,26,0.4) 90%,rgba(26,26,26,1) 100%); /* IE10+ */
+background: linear-gradient(to right,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%,rgba(26,26,26,0.4) 90%,rgba(26,26,26,1) 100%); /* W3C */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#1a1a1a',GradientType=1 ); /* IE6-9 */
+
+
+      }
+    }
+  }
+  .section-title,.page-title,.entry-title{
+    padding: 1.2em 0;
+    margin:0;
+    .customheader(4.2);
+    color: @white;
+    text-transform: uppercase;
+    font-weight: 300;
+    line-height: 1;
+    width: 500px;
+    a, a:visited {
       color: @white;
-      margin-bottom: 0;
+      opacity: 0.5;
+    }
+    a:hover {
+      text-decoration: none;
+      opacity: 1;
+    }
+  }
+  .section-title:before,.page-title:before,.entry-title:before{
+    content: '';
+    height: 100px;
+    width: 100px;
+    border: 1px solid @white;
+    border-radius: 100%;
+    display: inline;
+    margin-right: 1rem;
+    float: left;
   }
 }
-.content-sidebar-wrap{
-  background: @white;
+.subtitle-wrapper{
+  background-color: @black;
+  padding: 1rem 0;
+  min-height: 5rem;
+  h2{
+    font-size: 1.4rem;
+    font-weight: 400;
+    color: @white;
+    text-transform: uppercase;
+    margin: 0;
+  }
+}
+.header-widget-area{
+  .textwidget{
+    font-size: 15px;
+    font-size: 1.5rem;
+    color: @medgrey;
+  }
 }
 
+.section-contact.contact{
+  .entry-subtitle{
+    color: @green;
+  }
+  .entry-content{
+    .row;
+  }
+}
 
-
+.footer-widgets{
+  .savings{
+    background-color: @medgrey;
+    .widget-wrap{
+      .wrap;
+      padding: 1rem 0;
+      .readmore{
+        span{
+          .button(@medgrey);
+          border: 2px solid @white;
+          margin-left: 0;
+        }
+      }
+    }
+  }
+  .msd-connected{
+    .widget-wrap{
+      .wrap{
+        div.first-child{
+          padding-left: 0;
+        }
+        div.last-child{
+          padding-right: 0;
+        }
+      }
+    }
+  }
+}

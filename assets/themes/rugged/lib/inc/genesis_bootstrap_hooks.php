@@ -15,8 +15,7 @@ function msdlab_bootstrap_site_inner( $attributes ){
 }
 
 function msdlab_bootstrap_breadcrumb( $attributes ){
-    //$attributes['class'] .= ' row';
-    $attributes['class'] .= ' wrap';
+    $attributes['class'] .= ' row';
     return $attributes;
 }
 

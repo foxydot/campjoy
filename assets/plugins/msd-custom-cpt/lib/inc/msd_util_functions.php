@@ -54,3 +54,28 @@ function ts_var($var){
 	ts_data(var_export( $var , true ));
 }
 endif;
+
+
+
+if(!function_exists('msd_str_fmt')){
+    function msd_str_fmt($str,$format = FALSE){
+        switch($format){
+            case 'email':
+                $ret = '<a href="mailto:'.antispambot($str).'" class="email">'.antispambot($str).'</a>';
+                break;
+            case 'phone':
+                $str = preg_replace("/[^0-9]/", "", $str);
+                if(strlen($str) == 7)
+                    $ret = preg_replace("/([0-9]{3})([0-9]{4})/", "$1 $2", $str);
+                elseif(strlen($str) == 10)
+                    $ret = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "$1 $2 $3", $str);
+                else
+                    $ret = $str;
+                break;
+            default:
+                $ret = $str;
+                break;
+        }
+        return $ret;
+    }
+}

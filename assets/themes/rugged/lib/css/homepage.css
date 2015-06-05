@@ -1,6 +1,5 @@
-@import url(http://fonts.googleapis.com/css?family=Raleway:400,300,700);
-/* Import Fonts
------------------------------------------------------------- */
+/* Import Fonts */
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,500,300,100);
 /* Font Stacks */
 .customsansserif,
 .customsanserif {
@@ -15,12 +14,16 @@
 }
 /* Colors */
 /* Neutrals */
-/* Arrows */
+/* Gradients */
+/* Centered Vertical Line - using CSS3 gradients */
 /* Buttons */
 .button:hover,
-.button a:hover {
-  background-color: #4192ca;
-  border-radius: 6px;
+.button:visited,
+.button a,
+.button a:hover,
+.button a:visited {
+  background-color: #9ca728;
+  border-radius: 0;
   padding: 6px 24px;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
@@ -34,7 +37,16 @@
   display: table;
   margin: 12px auto;
   text-decoration: none;
-  background-color: #2f77a9;
+  background-color: #767e1e;
+}
+.button:hover:after,
+.button:visited:after,
+.button a:after,
+.button a:hover:after,
+.button a:visited:after {
+  font-family: FontAwesome;
+  content: ' \f178';
+  padding-left: 1rem;
 }
 /* Clears */
 .msd-clearfix {
@@ -44,18 +56,7 @@
   clear: both;
   visibility: hidden;
 }
+.page-title-area,
 .site-inner {
-  display: none;
-}
-.sectioned-page-wrapper .section {
-  text-align: center;
-}
-.sectioned-page-wrapper .section-products .row {
-  margin: 3rem 0;
-}
-.sectioned-page-wrapper .section-morbidity .section-title {
-  padding-bottom: 2rem;
-}
-.sectioned-page-wrapper .section-morbidity .section-body {
   display: none;
 }

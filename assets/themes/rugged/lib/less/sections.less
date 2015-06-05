@@ -1,212 +1,377 @@
-.page-template-page-sectioned{
-  .site-container{
-    background: @offwhite;
-    background-repeat: no-repeat;
-    background-position: center top;
-    .site-inner{
-      background: transparent;
-      padding: 0;
+@hexwidth: 160px;@hexborder: 4px;
+.about{
+  .site-inner, .sectioned-page-wrapper{
+    .entry-title,.entry-subtitle,
+    .section-title,.section-subtitle{
+      text-align: center;
+    }
+    .entry-subtitle{
+      .customheader(3.6);
+      font-weight: 500;
+      color: @green;
+      line-height: 1.25;
       margin: 0;
-      .content-sidebar-wrap{
-        background: transparent;
-        main{
-          article{
-            .entry-header{
-              .entry-title{
-              }
-            }
-          }
-        }
-      }
     }
   }
 }
+
 .sectioned-page-wrapper{
-  box-shadow: 0 0 12px 0 fade(@dkgrey,100%);
-  position: relative;
-  z-index: 10;
   .section{
     background-repeat: no-repeat;
-    padding: 0;
-    position: relative;
+    padding: 2rem 0;
     .section-subtitle,h4{
-      .customheader(1.8);
+      .customheader(3.6);
       font-weight: 500;
-      color: @blue;
+      color: @green;
       line-height: 1.25;
       margin: 0;
     }
-    .section-subtitle{
-      margin-bottom: 2rem;
-    }
       h3{
-      .customheader(1.8);
-      font-weight: 700;
+      .customheader(2);
+      font-weight: 300;
       color: @medgrey;
       line-height: 1.25;
-      margin-bottom: 0.5em;
       }
-    .section-title h3{
-      .customheader(2.4);
-      text-align: center;
-      text-transform: uppercase;
-      color: @dkgrey;
-      padding-top: 2rem;
-      margin-bottom: 0;
+    .section-title{
     }
     .section-body{
       .wrap{
-        padding: 2rem 0;
+        ul{
+          li{
+            list-style-type: circle;
+          }
+        }
         img{}
       }
-    &:after{
-      .msd-clearfix;
-    }
     }
   }
-  .section.bkg-grey{
+  .section.bkg-green{
+    background-color: fade(@green,20%);
+    .section-subtitle{
+      color: @mdgrey;
+    }
+  }
+  .section.bkg-offwhite{
     background-color: @offwhite;
   }
-  .section.bkg-blue{
-    background-color: @blue;
+  .section.bkg-mdgrey{
+    background-color: @mdgrey;
+  }
+  .section.bkg-dkgrey{
+    background-color: @dkgrey;
+  }
+  .section.bkg-dkgrey,.section.bkg-mdgrey{
     color: @white;
-    .section-title h3 {
-      color: @white;
-    }
-  }
-  .section.bkg-white{
-    background-color: @white;
-  }
-  .section.bkg-grey.arrow-down{
-    .arrow-down(@offwhite);
-  }
-  .section.bkg-blue.arrow-down{
-    .arrow-down(@blue);
-  }
-  .section.bkg-white.arrow-down{
-    .arrow-down(@white);
-  }
-  .section.title-bar{
     .section-title{
-      h3{
-        padding-bottom: 2rem;
-      }
-    }
-  }
-  .section.title-bar.title-bar-blue{
-    .section-title{
-      background-color: @blue;
       h3{
         color: @white;
       }
     }
+    h2,h4,h5,h6 { color: @white; }
   }
-  .section.title-bar-blue.arrow-down{
+  //Home Page
+  .section.hero{
+    min-height: 650px;
+    text-align: center;
     .section-title{
-      .arrow-down(@blue);
+      margin-top: 500px;
+      h3{
+        text-shadow: 0 0 12px fade(@dkgrey, 80%);
+      }
     }
-  }
-  .section.title-bar.arrow-down{
     .section-body{
-      padding-top: 3rem;
-    }
-  }
-  .section.summary{
-    .section-body{
-      margin: 4rem auto;
-      .bkg-white{
-        background:@white;
-        padding: 4rem;
-        .section-title{
-          h3{
-            text-align: left;
-            text-transform: none;
-            font-size: 2.4rem;
+      color: @white;
+      text-shadow: 0 0 12px fade(@dkgrey, 80%);
+      .section-subtitle{
+        color: @white;
+        text-shadow: 0 0 12px fade(@dkgrey, 80%);
+      }
+      .button-wrapper{
+        .button{
+          background: fade(@mdgrey,0%);
+          border: 1px solid @white;
+          color: @white;
+          box-shadow: 0 0 12px fade(@dkgrey, 80%);
+          text-shadow: 0 0 12px fade(@dkgrey, 80%);
+          &:hover{
+            background: fade(@mdgrey,70%);
           }
         }
-        .section-subtitle{
-          font-size: 1.8rem;
+      }
+    }
+  }
+  .section-service-menu{
+    padding:0;
+    .menu{
+      .make-row();
+      .menu-item{
+        .make-md-column(3);
+        text-align: center;
+        background-color: fade(@white,20%);
+        border-right: 1px solid fade(@white,80%);
+        font-size: 2.2rem;
+        text-shadow: 1px 1px 4px fade(@dkgrey,60%);
+        &:hover{
+          background-color: fade(@white,40%);
         }
-        .section-title, .section-subtitle, .content{
-          margin-left: 310px;
+        &:first-child{
+          border-left: 1px solid fade(@white,80%);
         }
-        .content{
-          float: none;
-          width: auto;
-          max-height: 0;
-          overflow: hidden;
-          .transition(all 0.5s ease-in-out);
+        a, a:visited, a:hover{
+          color: @white;
         }
-        .content.open{
-          max-height: 600px;
-          height: auto;
+      }
+    }
+  }
+  .section.section-locations{
+    text-align: center;
+    padding: 6rem 0;
+    .location-title{
+      .customheader;
+      text-transform: uppercase;
+      color: @green;
+      font-size: 2.2rem;
+    }
+    .location-phone{
+      .customheader;
+    }
+  }
+  .section.section-twins{
+    background-position: 50% 100%;
+    text-align: center;
+    color: @white;
+    text-shadow: 0 0 4px @dkgrey;
+    h2{
+      margin:0;
+    }
+    .wrap{
+      position: relative;
+      min-height: 500px;
+      .hex-holder{
+        position: absolute;
+        top: 40%;
+        left: 50%;
+        width: 100px;
+        display: block;
+        i{
+          font-size: 1.2em;
+          width: 2em;
+          height: 2em;
+          line-height: 1.8;
+          border: 1px solid fade(@white,80%);
+          border-radius: 50%;
+          margin-bottom: 0.6em;
+        }
+      }
+    }
+  }
+  .section.section-testimonials{
+    text-align: center;
+    .quote{
+      p{
+        position: relative;
+        &:before,&:after{
+          .customheader;
+          color: @vltgrey;
+          font-size: 6em;
+          line-height: 0;
+          position: relative;
+          top: 0.5em;
+          display: inline-block;
+        }
+        &:before{
+          content:"\201C";
         }
         &:after{
-          .msd-clearfix;
+          position: absolute;
+          top: 110%;
+          content:"\201D";
         }
       }
-      .more-wrap{
-        text-align: right;
-        padding: 0;
-        .expand{
-          display: inline-block;
-          font-size: 0.8em;
-          cursor: pointer;
-          i{
-            display: inline-block;
-            background: @blue;
-            color: @white;
-            text-align: center;
-            height: 20px;
-            width: 20px;
-            line-height: 1;
+     }
+     .attribution{
+       .customheader;
+       color: @green;
+       font-style: italic;
+     }
+  }
+  //About Page
+  .section.section-values{
+    .section-body{
+      ul{
+        -moz-column-count: 3;
+        -moz-column-gap: 20px;
+        -webkit-column-count: 3;
+        -webkit-column-gap: 20px;
+        column-count: 3;
+        column-gap: 20px;
+        text-align: left;
+        margin-top: 2rem;
+        li{
+          list-style: none outside none;
+          min-height: 180px;
+          text-indent: -5.2em;
+          margin-left: 5.2em;
+          padding-left: 1.4em;
+          border-left: 1px solid fade(@mdgrey,20%);
+          margin-bottom: 2em;
+          &:before{
+            .fontawesome;
+            content: '\f00c';
+            font-size: 1.4em;
+            border: 1px solid @ltgreen;
+            color: @ltgreen;
+            border-radius: 100%;
+            padding: 0.3em;
+            margin-right: 2em;
             position: relative;
-            top: -4px;
-            font-size: 1.2em;
+            line-height: 0;
+            top: 0.2em;
           }
         }
       }
     }
   }
-  //specific sections
-  .section-flow{
-    .section-body{
-      font-size: 1.8rem;
-      .wrap{
-        .col-md-6.first-child{
-          padding-top: 3em;
-        }
-      }
+  .section.section-explore{
+    text-align: left;
+    .section-title{
+      text-align: left;
     }
-  }
-}
-
-
-
-@media only screen and (max-width: 767px) {
-  .sectioned-page-wrapper{
-    .section.summary{
-      .section-body{
-        .bkg-white{
-          .section-title{
-            h3{
-              text-align: left;
-              text-transform: none;
-              font-size: 1.8rem;
+    .section-body{
+      .wrap{
+        position: relative;
+        p{margin:0;}
+        .button-wrapper{
+          position: absolute;
+          display: table;
+          top:-2rem;
+          right:0;
+          .button{
+            background: fade(@mdgrey,0%);
+            border: 1px solid @white;
+            color: @white;
+            &:hover{
+              background: fade(@mdgrey,70%);
             }
           }
-          .section-subtitle{
-            font-size: 1.4rem;
-          }
-          .section-title, .section-subtitle, .content{
-            margin-left: 0px;
-          }
-          .content{
-          }
-          .content.open{
-          }
         }
       }
     }
+  }
+  .section.section-employees{
+    #team-members{
+  margin: 0 auto;
+  text-align: center;
+  top: -@hexwidth/2;
+  position: relative;
+  display: block;
+  line-height: 1;
+  
+.hex_row_even {
+  display: inline-block;
+  margin: 0 auto -@hexwidth*1.3 auto;
+  overflow: hidden;
+}
+
+.hex_row_odd {
+  display: inline-block;
+  margin: 0 auto -@hexwidth*1.3 auto;
+  overflow: hidden;
+} 
+
+    .center {
+      margin: 20px 10px;
+      width: @hexwidth;
+      position: relative;
+      float: left;
+    }
+    
+    .hexagon {
+      .rotate(120deg);
+      cursor: pointer;
+      height: (@hexwidth *2);
+      overflow: hidden;
+      visibility: hidden;
+      width: @hexwidth;
+      position: static;
+    }
+    
+    .hex1 {
+      .rotate(-60deg);
+      height: 100%;
+      overflow: hidden;
+      width: 100%;
+    }
+    
+    
+    .hex2 {
+      .rotate(-60deg);
+      height: 100%;
+      position: relative;
+      visibility: visible;
+      width: 100%;
+    }
+    .desc {
+      color: white;
+      background: fade(@green,70%);
+      font-weight: 300;
+      height: (@hexwidth * 2);
+      position: absolute;
+      text-align: center;
+      text-transform: uppercase; 
+      visibility: visible;
+      width: @hexwidth;
+      line-height: 1.2em;
+      opacity: 0;
+      .transition(all 0.5s ease);
+      &:hover{
+        opacity: 1;
+      }
+      h2 {
+        margin: (@hexwidth - (@hexwidth / 4) - 10px) 20px 0 20px;
+        color: @white;
+        font-size: 1em;
+      }
+      p {font-size: 0.8em; text-transform: lowercase;margin:0;}
+      a,a:visited{color: @white;}
+    }
+
+
+.hexagon.bkg{
+  height: (@hexwidth *2)+(@hexborder*2);
+  width: @hexwidth+(@hexborder*2);
+}
+
+.hex2.bkg{
+  background: @green;
+}
+
+.fg{
+  position: absolute;
+  top: @hexborder;
+  left: @hexborder;
+  z-index: 1000;
+}
+    }
+  }
+  //Geothemal Page
+  .section-the-geothermal-advantages{
+    text-align: center;
+    color: @white;
+    .section-body{
+      ul{
+        .make-md-column(6);
+        text-align: left;
+      }
+    }
+  }
+  .section-conventional-system{
+    text-align: center;
+  }
+  //Contact Us
+  .section.section-artwork{
+    min-height: 300px;
+    background-position: right center;
+    background-size: 100%;
   }
 }
