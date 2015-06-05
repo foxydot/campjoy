@@ -1,0 +1,192 @@
+@import 'mixins';
+
+.post-type-archive-project{
+  .page-title-area{display: none;}
+  .archive-description{
+    background: @green;
+    text-align: center;
+    color: @white;
+    h1{
+      color: @white;
+      text-transform: uppercase;
+      font-weight: 600;
+      font-size: 3.6rem;
+      letter-spacing: 0.5rem;
+      }
+    div.sep{
+      background: url(../img/bkg-portfolio-sep-wht.png) no-repeat center center;
+      display: block;
+      min-height: 4.6rem;
+      margin-bottom: 3rem;
+    }
+    p{
+      width: 80%;margin: 0 auto;
+      a{
+        font-size: 1.2rem;
+        color: @white;
+      }
+    }
+  }
+  #filters{
+    text-align: center;
+    padding: 1rem;
+    a.filter{
+      border: 1px solid @green;
+      border-radius: 100%;
+      font-size: 1rem;
+      text-align: center;
+      min-height: 9rem;
+      min-width: 9rem;
+      display: inline-block;
+      margin: 1rem;
+      position: relative;
+      i{
+        display: block;
+        margin: 1.5rem auto -1rem;
+      }
+    }
+    a.filter:after, a.filter:before { 
+      top: 100%; 
+      left: 50%; 
+      border: solid transparent; 
+      content: " "; 
+      height: 0; 
+      width: 0; 
+      position: absolute; 
+      pointer-events: none;
+      } 
+    a.filter:after {  
+      border-color: rgba(83, 42, 68, 0); 
+      border-top-color: transparent; 
+      border-width: 6px; 
+      margin-left: -6px;
+      } 
+    a.filter:before {  
+      border-color: rgba(83, 42, 68, 0); 
+      border-top-color: transparent; 
+      border-width: 7px; 
+      margin-left: -7px;
+      }
+
+    a.filter:hover, a.filter.active{
+      text-decoration: none;
+      color: @white;
+      background-color: @green;
+    }
+    
+    a.filter:hover:after, a.filter:hover:before,
+    a.filter.active:after, a.filter.active:before  { 
+      top: 100%; 
+      left: 51%; 
+      border: solid transparent; 
+      content: " "; 
+      height: 0; 
+      width: 0; 
+      position: absolute; 
+      pointer-events: none;
+      } 
+    a.filter:hover:after,
+    a.filter.active:after { 
+      border-color: rgba(83, 42, 68, 0); 
+      border-top-color: #532A44; 
+      border-width: 6px; 
+      margin-left: -6px;
+      } 
+    a.filter:hover:before,
+    a.filter.active:before { 
+      border-color: rgba(83, 42, 68, 0); 
+      border-top-color: #532A44; 
+      border-width: 7px; 
+      margin-left: -7px;
+      }
+  }
+  #portfolio-projects{
+    article{
+      padding: 0.5rem;
+      margin: 0;
+      .image-widget-background{
+        min-height: 400px;
+        position: relative;
+        .fuzzybubble{
+            -webkit-transition: all 0.5s ease-in-out;
+            -moz-transition:    all 0.5s ease-in-out;
+            -ms-transition:     all 0.5s ease-in-out;
+            -o-transition:      all 0.5s ease-in-out;
+            transition:         all 0.5s ease-in-out;
+            opacity: 0;
+            width: 310px;
+            height: 310px;
+            margin: 3rem;
+            a:hover{
+              text-decoration: none;
+            }
+            .entry-title{
+              margin-top: 4rem;
+              font-size: 2.8rem;
+              text-align: center;
+              text-transform: uppercase;
+              text-shadow: 2px 2px 4px @dkgrey;
+              a{
+                color: @white;
+              }
+            }
+            .entry-subtitle{
+              width: 100%;
+              margin: 0 auto;
+              display: block;
+              font-size: 1.4rem;
+              text-transform: none;
+              text-align: center;
+              color: @white;
+              font-weight: 500;
+              border: 0;
+              text-shadow: 2px 2px 4px @dkgrey;
+            }
+            .entry-permalink a{
+              .button();
+              text-align: center;
+            }
+        }
+      }
+    }
+    article:hover{
+      .image-widget-background{
+        .fuzzybubble{
+          opacity:1;
+        }
+      }
+    }
+    article.more-projects{
+      cursor: pointer;
+      .image-widget-background{
+      background: @ltgrey;
+        .fuzzybubble{
+          opacity:1;
+          border: 0;
+            .entry-title{
+              margin-top: 4rem;
+              font-size: 2.8rem;
+              text-align: center;
+              text-transform: uppercase;
+              text-shadow: 2px 2px 4px @dkgrey;
+              a{
+                color: @white;
+              }
+            }
+            .entry-subtitle{
+              width: 100%;
+              margin: 0 auto;
+              display: block;
+              font-size: 1.4rem;
+              text-transform: none;
+              text-align: center;
+              color: @white;
+              font-weight: 500;
+              border: 0;
+              text-shadow: 2px 2px 4px @dkgrey;
+            }
+        }
+      }
+    }
+  }
+}
