@@ -1,0 +1,148 @@
+@import 'lesshat';
+/* Import Fonts */
+@import url(http://fonts.googleapis.com/css?family=Raleway:700,500,300,100);
+
+/* Font Stacks */
+.customserif(@size:1.6) {
+  font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
+  font-weight: 400;
+  font-size: unit((@size*10),px);
+  font-size: unit(@size,rem);
+  line-height: 1.625;
+}
+.custombody(@size:1.6) {
+  font-family: "Raleway", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: unit((@size*10),px);
+  font-size: unit(@size,rem);
+  line-height: 1.625;
+}
+
+.customheader(@size:1.6) {
+  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: unit((@size*10),px);
+  font-size: unit(@size,rem);
+  line-height: 1.625;
+}
+.customsansserif,.customsanserif{
+  .customheader();
+}
+
+.fontawesome {
+  font-family: FontAwesome;
+}
+
+
+/* Colors */
+@red: #f00;
+@orange: #f90;
+@yellow: #EFA930;
+@green: #9CA728;
+@blue: #31B3D5;
+@purple: #90f;
+@beige: #c96;
+@brown: #630;
+
+@ltred: lighten(@red,20%);
+@dkred: darken(@red, 20%);
+@ltorange: lighten(@orange,20%);
+@dkorange: darken(@orange, 20%);
+@ltyellow: #FFDF01;
+@dkyellow: darken(@yellow, 20%);
+@ltgreen: lighten(@green,20%);
+@dkgreen: darken(@green, 20%);
+@ltblue: lighten(@blue,20%);
+@dkblue: darken(@blue, 20%);
+@ltpurple: lighten(@purple,20%);
+@dkpurple: darken(@purple, 20%);
+@ltbeige: lighten(@beige,20%);
+@dkbeige: darken(@beige, 20%);
+@ltbrown: lighten(@brown,20%);
+@dkbrown: darken(@brown, 20%);
+
+/* Neutrals */
+@white: #FFF;
+@offwhite: #F8F8F8;
+@vltgrey: #CCC;
+@ltgrey: #999;
+@mdgrey: #5E5F61;
+@medgrey: @mdgrey;
+@dkgrey: #1A1A1A;
+@black: #000;
+
+//mixins for social colors
+@facebook: #345AA1;
+@twitter: #348DB9;
+@pinterest: #EC1A22;
+@google: #000000;
+@linkedin: #66B5D3;
+@instagram: #EC1A22;
+@tumblr: #3E5A70;
+@reddit: #FF4400;
+@flickr: #0062DD;
+@youtube: #CC181E;
+@vimeo: #232021;
+@vine: #00BE8F;
+@sharethis: #00BF00;
+@contact: #999999;
+@rss: #F37D2A;
+
+/* Gradients */
+.quickgradient(@color) {
+  .background-image(linear-gradient(to bottom, darken(@color,20%) 0%,lighten(@color,20%) 100%))
+}
+
+/* Centered Vertical Line - using CSS3 gradients */
+.centered-vert-line(@midColor: #ccc, @width: 1px, @startColor: transparent, @endColor: transparent, @deg: 90deg, @pos: 50%) {
+  background-image: -moz-linear-gradient(@deg, @startColor, @midColor, @endColor); // FF 3.6+
+  background-image: -webkit-linear-gradient(@deg, @startColor, @midColor, @endColor); // Safari 5.1+, Chrome 10+
+  background-image: -o-linear-gradient(@deg, @startColor, @midColor, @endColor); // Opera 11.10
+  background-image: linear-gradient(@deg, @startColor, @midColor, @endColor); // Standard, IE10
+  background-position: @pos;
+  background-repeat: repeat-y;
+  background-size: @width 100px;
+ }
+
+/* Buttons */
+.button(@color:@green) {
+  background-color: @color;
+  border-radius: 0;
+  padding: 6px 24px;
+  .customsanserif;
+  color: #FFFFFF;
+  font-size: 12px;
+  font-weight: normal;
+  text-transform: uppercase;
+  display: table;
+  margin: 12px auto;
+  text-decoration: none;
+  &:after{
+    .fontawesome;
+    content: ' \f178';
+    padding-left: 1rem;
+  }
+}
+
+
+.button-hover(@color:@green) {
+  .button(@color);
+  background-color: darken(@color,10%);
+}
+
+.button:hover,
+.button:visited,
+.button a,
+.button a:hover,
+.button a:visited {
+  .button-hover();
+}
+
+/* Clears */
+.msd-clearfix {
+    content: ".";
+    display: block;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
