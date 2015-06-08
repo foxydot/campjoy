@@ -5613,37 +5613,6 @@ td.visible-print {
 /* Gradients */
 /* Centered Vertical Line - using CSS3 gradients */
 /* Buttons */
-.button:hover,
-.button:visited,
-.button a,
-.button a:hover,
-.button a:visited {
-  background-color: #9ca728;
-  border-radius: 0;
-  padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
-  text-transform: uppercase;
-  display: table;
-  margin: 12px auto;
-  text-decoration: none;
-  background-color: #767e1e;
-}
-.button:hover:after,
-.button:visited:after,
-.button a:after,
-.button a:hover:after,
-.button a:visited:after {
-  font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
-}
 /* Clears */
 .msd-clearfix {
   content: ".";
@@ -5845,17 +5814,16 @@ input[type="reset"],
 input[type="submit"],
 .button,
 .entry-content .button {
-  background-color: #9ca728;
-  border-radius: 0;
-  padding: 6px 24px;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
+  color: #454647;
+  background-color: #ffdf01;
+  border-radius: 30px;
+  border-bottom: 0;
+  padding: 1rem 2rem;
   text-transform: uppercase;
   display: table;
   margin: 12px auto;
@@ -5866,6 +5834,17 @@ input[type="submit"],
   -o-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
+button:hover,
+input[type="button"]:hover,
+input[type="reset"]:hover,
+input[type="submit"]:hover,
+.button:hover,
+.entry-content .button:hover {
+  color: #454647;
+  background-color: #efa930;
+  border-bottom: 0;
+  text-decoration: none;
+}
 button:after,
 input[type="button"]:after,
 input[type="reset"]:after,
@@ -5873,41 +5852,7 @@ input[type="submit"]:after,
 .button:after,
 .entry-content .button:after {
   font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
-}
-button:hover,
-input:hover[type="button"],
-input:hover[type="reset"],
-input:hover[type="submit"],
-.button:hover,
-.entry-content .button:hover {
-  background-color: #9ca728;
-  border-radius: 0;
-  padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
-  text-transform: uppercase;
-  display: table;
-  margin: 12px auto;
-  text-decoration: none;
-  background-color: #767e1e;
-}
-button:hover:after,
-input:hover[type="button"]:after,
-input:hover[type="reset"]:after,
-input:hover[type="submit"]:after,
-.button:hover:after,
-.entry-content .button:hover:after {
-  font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
+  content: ' \f105';
 }
 .entry-content .button:hover {
   color: #ffffff;
@@ -7169,17 +7114,16 @@ Sidebars
   /*Text Widget with Click */
 }
 .sidebar .widget_text .textwidget .readmore {
-  background-color: #9ca728;
-  border-radius: 0;
-  padding: 6px 24px;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
+  color: #454647;
+  background-color: #ffdf01;
+  border-radius: 30px;
+  border-bottom: 0;
+  padding: 1rem 2rem;
   text-transform: uppercase;
   display: table;
   margin: 12px auto;
@@ -7191,15 +7135,25 @@ Sidebars
   transition: all 0.1s ease-in-out;
   float: right;
 }
-.sidebar .widget_text .textwidget .readmore:after {
-  font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
+.sidebar .widget_text .textwidget .readmore:hover {
+  color: #454647;
+  background-color: #efa930;
+  border-bottom: 0;
+  text-decoration: none;
 }
 .sidebar .widget_text .textwidget .readmore:after {
   font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
+  content: ' \f105';
+}
+.sidebar .widget_text .textwidget .readmore:hover {
+  color: #454647;
+  background-color: #efa930;
+  border-bottom: 0;
+  text-decoration: none;
+}
+.sidebar .widget_text .textwidget .readmore:after {
+  font-family: FontAwesome;
+  content: ' \f105';
 }
 .sidebar .widget_text a {
   border: none;
@@ -7613,6 +7567,7 @@ Site Footer
 }
 .sectioned-page-wrapper .section {
   background-repeat: no-repeat;
+  background-position: center center;
   padding: 2rem 0;
 }
 .sectioned-page-wrapper .section .section-subtitle,
@@ -7640,11 +7595,15 @@ Site Footer
 .sectioned-page-wrapper .section .section-body .wrap ul li {
   list-style-type: circle;
 }
-.sectioned-page-wrapper .section.bkg-green {
-  background-color: rgba(156, 167, 40, 0.2);
+.sectioned-page-wrapper .section.bkg-blue {
+  background-color: #31b3d5;
 }
-.sectioned-page-wrapper .section.bkg-green .section-subtitle {
+.sectioned-page-wrapper .section.bkg-blue .section-subtitle {
   color: #5e5f61;
+}
+.sectioned-page-wrapper .section.bkg-blue .section-content p,
+.sectioned-page-wrapper .section.bkg-blue .section-content h3 {
+  color: #ffffff;
 }
 .sectioned-page-wrapper .section.bkg-offwhite {
   background-color: #f8f8f8;
@@ -7811,25 +7770,26 @@ Site Footer
 }
 .sectioned-page-wrapper .section.section-testimonials .quote p {
   position: relative;
+  text-align: left;
 }
 .sectioned-page-wrapper .section.section-testimonials .quote p:before,
 .sectioned-page-wrapper .section.section-testimonials .quote p:after {
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-family: Georgia, Palatino, "Palatino Linotype", Times, "Times New Roman", serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #cccccc;
-  font-size: 6em;
+  color: #efa930;
+  font-size: 5em;
   line-height: 0;
   position: relative;
   top: 0.5em;
   display: inline-block;
 }
-.sectioned-page-wrapper .section.section-testimonials .quote p:before {
+.sectioned-page-wrapper .section.section-testimonials .quote p.first-child:before {
   content: "\201C";
 }
-.sectioned-page-wrapper .section.section-testimonials .quote p:after {
+.sectioned-page-wrapper .section.section-testimonials .quote p.last-child:after {
   position: absolute;
   top: 110%;
   content: "\201D";
@@ -7840,7 +7800,7 @@ Site Footer
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #9ca728;
+  color: #ffdf01;
   font-style: italic;
 }
 .sectioned-page-wrapper .section.section-values .section-body ul {
@@ -8158,17 +8118,16 @@ Site Footer
   padding: 1rem 0;
 }
 .footer-widgets .savings .widget-wrap .readmore span {
-  background-color: #5e5f61;
-  border-radius: 0;
-  padding: 6px 24px;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
+  color: #454647;
+  background-color: #ffdf01;
+  border-radius: 30px;
+  border-bottom: 0;
+  padding: 1rem 2rem;
   text-transform: uppercase;
   display: table;
   margin: 12px auto;
@@ -8176,10 +8135,15 @@ Site Footer
   border: 2px solid #ffffff;
   margin-left: 0;
 }
+.footer-widgets .savings .widget-wrap .readmore span:hover {
+  color: #454647;
+  background-color: #efa930;
+  border-bottom: 0;
+  text-decoration: none;
+}
 .footer-widgets .savings .widget-wrap .readmore span:after {
   font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
+  content: ' \f105';
 }
 .footer-widgets .msd-connected .widget-wrap .wrap div.first-child {
   padding-left: 0;

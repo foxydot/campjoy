@@ -105,38 +105,29 @@
  }
 
 /* Buttons */
-.button(@color:@green) {
-  background-color: @color;
-  border-radius: 0;
-  padding: 6px 24px;
+.button(@color:@ltyellow) {
   .customsanserif;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
+  color: darken(@medgrey, 10%);
+  background-color: @ltyellow;
+  border-radius: 30px;
+  border-bottom: 0;
+  padding: 1rem 2rem;
   text-transform: uppercase;
   display: table;
   margin: 12px auto;
   text-decoration: none;
+  &:hover{
+    color: darken(@medgrey, 10%);
+    background-color: @yellow;
+    border-bottom: 0;
+    text-decoration: none;
+  }
   &:after{
     .fontawesome;
-    content: ' \f178';
-    padding-left: 1rem;
+    content: ' \f105';
   }
 }
 
-
-.button-hover(@color:@green) {
-  .button(@color);
-  background-color: darken(@color,10%);
-}
-
-.button:hover,
-.button:visited,
-.button a,
-.button a:hover,
-.button a:visited {
-  .button-hover();
-}
 
 /* Clears */
 .msd-clearfix {

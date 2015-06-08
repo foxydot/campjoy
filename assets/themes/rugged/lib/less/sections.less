@@ -18,6 +18,7 @@
 .sectioned-page-wrapper{
   .section{
     background-repeat: no-repeat;
+    background-position: center center;
     padding: 2rem 0;
     .section-subtitle,h4{
       .customheader(3.6);
@@ -45,10 +46,15 @@
       }
     }
   }
-  .section.bkg-green{
-    background-color: fade(@green,20%);
+  .section.bkg-blue{
+    background-color: @blue;
     .section-subtitle{
       color: @mdgrey;
+    }
+    .section-content{
+      p,h3{
+        color: @white;
+      }
     }
   }
   .section.bkg-offwhite{
@@ -170,19 +176,20 @@
     .quote{
       p{
         position: relative;
+        text-align: left;
         &:before,&:after{
-          .customheader;
-          color: @vltgrey;
-          font-size: 6em;
+          .customserif;
+          color: @yellow;
+          font-size: 5em;
           line-height: 0;
           position: relative;
           top: 0.5em;
           display: inline-block;
         }
-        &:before{
+        &.first-child:before{
           content:"\201C";
         }
-        &:after{
+        &.last-child:after{
           position: absolute;
           top: 110%;
           content:"\201D";
@@ -191,7 +198,7 @@
      }
      .attribution{
        .customheader;
-       color: @green;
+       color: @ltyellow;
        font-style: italic;
      }
   }

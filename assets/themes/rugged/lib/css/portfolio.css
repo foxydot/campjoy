@@ -17,37 +17,6 @@
 /* Gradients */
 /* Centered Vertical Line - using CSS3 gradients */
 /* Buttons */
-.button:hover,
-.button:visited,
-.button a,
-.button a:hover,
-.button a:visited {
-  background-color: #9ca728;
-  border-radius: 0;
-  padding: 6px 24px;
-  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-  font-size: 1.6rem;
-  line-height: 1.625;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
-  text-transform: uppercase;
-  display: table;
-  margin: 12px auto;
-  text-decoration: none;
-  background-color: #767e1e;
-}
-.button:hover:after,
-.button:visited:after,
-.button a:after,
-.button a:hover:after,
-.button a:visited:after {
-  font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
-}
 /* Clears */
 .msd-clearfix {
   content: ".";
@@ -205,27 +174,31 @@
   text-shadow: 2px 2px 4px #1a1a1a;
 }
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-permalink a {
-  background-color: #9ca728;
-  border-radius: 0;
-  padding: 6px 24px;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #FFFFFF;
-  font-size: 12px;
-  font-weight: normal;
+  color: #454647;
+  background-color: #ffdf01;
+  border-radius: 30px;
+  border-bottom: 0;
+  padding: 1rem 2rem;
   text-transform: uppercase;
   display: table;
   margin: 12px auto;
   text-decoration: none;
   text-align: center;
 }
+.post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-permalink a:hover {
+  color: #454647;
+  background-color: #efa930;
+  border-bottom: 0;
+  text-decoration: none;
+}
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-permalink a:after {
   font-family: FontAwesome;
-  content: ' \f178';
-  padding-left: 1rem;
+  content: ' \f105';
 }
 .post-type-archive-project #portfolio-projects article:hover .image-widget-background .fuzzybubble {
   opacity: 1;
