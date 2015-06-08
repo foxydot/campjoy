@@ -29,6 +29,9 @@
 .site-inner {
   display: none;
 }
+.sectioned-page-wrapper .section-features {
+  background-repeat: repeat;
+}
 .sectioned-page-wrapper .section-features h3 {
   font-size: inherit;
   font-weight: 700;
