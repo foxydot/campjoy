@@ -34,3 +34,11 @@
   font-weight: 700;
   text-transform: uppercase;
 }
+.sectioned-page-wrapper .section-features,
+.sectioned-page-wrapper .section-testimonials {
+  padding: 8rem 0;
+}
+.sectioned-page-wrapper .section-map {
+  background-size: cover;
+  min-height: 600px;
+}
