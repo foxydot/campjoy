@@ -159,7 +159,7 @@
   font-size: 2.8rem;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px #1a1a1a;
+  text-shadow: 2px 2px 4px #383637;
 }
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-title a {
   color: #ffffff;
@@ -174,7 +174,7 @@
   color: #ffffff;
   font-weight: 500;
   border: 0;
-  text-shadow: 2px 2px 4px #1a1a1a;
+  text-shadow: 2px 2px 4px #383637;
 }
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-permalink a {
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
@@ -221,7 +221,7 @@
   font-size: 2.8rem;
   text-align: center;
   text-transform: uppercase;
-  text-shadow: 2px 2px 4px #1a1a1a;
+  text-shadow: 2px 2px 4px #383637;
 }
 .post-type-archive-project #portfolio-projects article.more-projects .image-widget-background .fuzzybubble .entry-title a {
   color: #ffffff;
@@ -236,5 +236,5 @@
   color: #ffffff;
   font-weight: 500;
   border: 0;
-  text-shadow: 2px 2px 4px #1a1a1a;
+  text-shadow: 2px 2px 4px #383637;
 }

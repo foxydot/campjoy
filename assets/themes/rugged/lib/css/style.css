@@ -6449,7 +6449,7 @@ html {
 }
 body {
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #5e5f61;
   font-family: "Raleway", "Helvetica Neue", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -6471,15 +6471,15 @@ textarea:focus,
   transition: all 0.1s ease-in-out;
 }
 ::-moz-selection {
-  background-color: #1a1a1a;
+  background-color: #383637;
   color: #ffffff;
 }
 ::selection {
-  background-color: #1a1a1a;
+  background-color: #383637;
   color: #ffffff;
 }
 a {
-  color: #5e5f61;
+  color: #9ca728;
   text-decoration: none;
 }
 a img {
@@ -6487,7 +6487,7 @@ a img {
   margin-bottom: -0.4rem;
 }
 a:hover {
-  color: #1a1a1a;
+  color: #767e1e;
 }
 a:focus {
   outline: 0;
@@ -6532,7 +6532,7 @@ blockquote::before {
   top: -10px;
 }
 .entry-content code {
-  background-color: #1a1a1a;
+  background-color: #383637;
   color: #cccccc;
 }
 cite {
@@ -6554,7 +6554,7 @@ h6 {
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #1a1a1a;
+  color: #383637;
   font-weight: 700;
   line-height: 1.2;
   margin: 0 0 16px;
@@ -6606,7 +6606,7 @@ select,
 textarea {
   background-color: #ffffff;
   border: 1px solid #5e5f61;
-  color: #1a1a1a;
+  color: #383637;
   font-size: 14px;
   font-size: 1.4rem;
   padding: 16px;
@@ -6866,7 +6866,7 @@ img.alignright,
   font-size: 16px;
   font-size: 1.6rem;
   line-height: 1.625;
-  color: #1a1a1a;
+  color: #383637;
   margin-bottom: 4px;
   margin-bottom: 0.4rem;
 }
@@ -6891,7 +6891,7 @@ img.alignright,
 .section-title a,
 .entry-title a,
 .sidebar .widget-title a {
-  color: #1a1a1a;
+  color: #383637;
 }
 .section-title a:hover,
 .entry-title a:hover {
@@ -7032,7 +7032,7 @@ Plugins
 }
 .enews-widget input:hover[type="submit"] {
   background-color: #ffffff;
-  color: #1a1a1a;
+  color: #383637;
 }
 /* Genesis Latest Tweets
 --------------------------------------------- */
@@ -7256,11 +7256,11 @@ Site Navigation
 }
 .genesis-nav-menu .menu-item a:hover,
 .genesis-nav-menu .separator a:hover {
-  color: #1a1a1a;
+  color: #383637;
   text-decoration: none;
 }
 .genesis-nav-menu .current-menu-item > a {
-  color: #1a1a1a;
+  color: #383637;
 }
 .genesis-nav-menu .sub-menu {
   left: -9999px;
@@ -7441,7 +7441,7 @@ Site Navigation
 }
 .nav-secondary .wrap li.menu-item ul li a {
   border: 0;
-  color: #1a1a1a;
+  color: #383637;
   width: auto;
   padding: 0 0 0 20px;
   background-position: left center;
@@ -7485,7 +7485,7 @@ Site Navigation
 }
 .nav-footer li.menu-item ul li a {
   border: 0;
-  color: #1a1a1a;
+  color: #383637;
   width: auto;
   padding: 0 0 0 20px;
   background-position: left center;
@@ -7730,7 +7730,7 @@ article.entry {
   font-size: 1.8rem;
   line-height: 1.625;
   font-weight: 300;
-  color: #1a1a1a;
+  color: #383637;
   line-height: 1.25;
 }
 /* Pagination
@@ -7979,7 +7979,7 @@ Sidebars
   text-align: center;
 }
 .sidebar .widget_sp_image .link a {
-  color: #1a1a1a;
+  color: #383637;
   border: 0;
 }
 .sidebar .widget_sp_image .link a i {
@@ -8028,7 +8028,7 @@ Footer Widgets
   word-wrap: break-word;
 }
 .footer-widgets .contact {
-  background-color: #1a1a1a;
+  background-color: #383637;
   padding: 2rem 3rem;
   margin-bottom: 3rem;
 }
@@ -8046,7 +8046,7 @@ Footer Widgets
 .footer-widgets .contact .gform_body textarea {
   background: transparent;
   color: #ffffff;
-  border: 1px solid #ffffff;
+  border: 1px solid #999999;
   padding: 0.5rem;
 }
 .footer-widgets .contact .gform_footer input[type=submit] {
@@ -8302,7 +8302,7 @@ Site Footer
 }
 .hexa.green .color_0 {
   background-color: #ffffff;
-  box-shadow: 0px 0px 3px #1a1a1a;
+  box-shadow: 0px 0px 3px #383637;
 }
 .h_sq {
   position: absolute;
@@ -8429,7 +8429,7 @@ Site Footer
   background-color: #5e5f61;
 }
 .sectioned-page-wrapper .section.bkg-dkgrey {
-  background-color: #1a1a1a;
+  background-color: #383637;
 }
 .sectioned-page-wrapper .section.bkg-dkgrey,
 .sectioned-page-wrapper .section.bkg-mdgrey {
@@ -8457,22 +8457,22 @@ Site Footer
   margin-top: 500px;
 }
 .sectioned-page-wrapper .section.hero .section-title h3 {
-  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+  text-shadow: 0 0 12px rgba(56, 54, 55, 0.8);
 }
 .sectioned-page-wrapper .section.hero .section-body {
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+  text-shadow: 0 0 12px rgba(56, 54, 55, 0.8);
 }
 .sectioned-page-wrapper .section.hero .section-body .section-subtitle {
   color: #ffffff;
-  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+  text-shadow: 0 0 12px rgba(56, 54, 55, 0.8);
 }
 .sectioned-page-wrapper .section.hero .section-body .button-wrapper .button {
   background: rgba(94, 95, 97, 0);
   border: 1px solid #ffffff;
   color: #ffffff;
-  box-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
-  text-shadow: 0 0 12px rgba(26, 26, 26, 0.8);
+  box-shadow: 0 0 12px rgba(56, 54, 55, 0.8);
+  text-shadow: 0 0 12px rgba(56, 54, 55, 0.8);
 }
 .sectioned-page-wrapper .section.hero .section-body .button-wrapper .button:hover {
   background: rgba(94, 95, 97, 0.7);
@@ -8513,7 +8513,7 @@ Site Footer
   background-color: rgba(255, 255, 255, 0.2);
   border-right: 1px solid rgba(255, 255, 255, 0.8);
   font-size: 2.2rem;
-  text-shadow: 1px 1px 4px rgba(26, 26, 26, 0.6);
+  text-shadow: 1px 1px 4px rgba(56, 54, 55, 0.6);
 }
 @media (min-width: 992px) {
   .sectioned-page-wrapper .section-service-menu .menu .menu-item {
@@ -8557,7 +8557,7 @@ Site Footer
   background-position: 50% 100%;
   text-align: center;
   color: #ffffff;
-  text-shadow: 0 0 4px #1a1a1a;
+  text-shadow: 0 0 4px #383637;
 }
 .sectioned-page-wrapper .section.section-twins h2 {
   margin: 0;
@@ -8808,6 +8808,10 @@ Site Footer
   background-position: right center;
   background-size: 100%;
 }
+.safari .section.section-testimonials .quote p:before,
+.safari .section.section-testimonials .quote p:after {
+  top: 0.25em;
+}
 .site-inner {
   background: #f8f8f8;
 }
@@ -8815,7 +8819,7 @@ Site Footer
   background: #ffffff;
 }
 .page-title-area {
-  background: #1a1a1a;
+  background: #383637;
 }
 .page-title-area .banner {
   background-repeat: no-repeat;
