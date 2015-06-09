@@ -57,7 +57,7 @@ if (!class_exists('MSDTestimonialCPT')) {
 		        'labels' => $labels,
 		        'hierarchical' => false,
 		        'description' => 'Testimonial',
-		        'supports' => array( 'author' ,'genesis-cpt-archives-settings'),
+		        'supports' => array('title', 'author' ,'genesis-cpt-archives-settings'),
 		        'taxonomies' => array(),
 		        'public' => true,
 		        'show_ui' => true,
@@ -144,6 +144,7 @@ if (!class_exists('MSDTestimonialCPT')) {
                 'rows' => 1,
                 'columns' => 1,
                 'link' => false,
+                'length' => false
             ), $atts ) );
             global $testimonial_info;
             $args = array(
@@ -156,6 +157,9 @@ if (!class_exists('MSDTestimonialCPT')) {
             foreach($testimonials AS $testimonial){
                 $testimonial_info->the_meta($testimonial->ID);
                 $quote = apply_filters('the_content',$testimonial_info->get_the_value('quote'));
+                if($length){
+                    $quote = self::msd_trim_quote($quote,$length,get_the_permalink($testimonial->ID));
+                }
                 $name = $testimonial_info->get_the_value('attribution')!=''?'<span class="name">'.$testimonial_info->get_the_value('attribution').',</span> ':'';
                 $position = $testimonial_info->get_the_value('position')!=''?'<span class="position">'.$testimonial_info->get_the_value('position').',</span> ':'';
                 $organization = $testimonial_info->get_the_value('organization')!=''?'<span class="organization">'.$testimonial_info->get_the_value('organization').'</span> ':'';
@@ -190,6 +194,31 @@ if (!class_exists('MSDTestimonialCPT')) {
                     ));
             }
             
+            
+    function msd_trim_quote($text, $length = 35) {
+        $raw_excerpt = $text;
+        if ( '' == $text ) {
+            $text = get_the_content('');
+        }
+            $text = strip_shortcodes( $text );
+            $text = preg_replace("/<img[^>]+\>/i", "", $text); 
+            $text = apply_filters('the_content', $text);
+            $text = str_replace(']]>', ']]&gt;', $text);
+            $text = strip_tags($text);
+            $excerpt_length = apply_filters('excerpt_length', $length);
+            $words = preg_split("/[\n\r\t ]+/", $text, $excerpt_length + 1, PREG_SPLIT_NO_EMPTY);
+            if ( count($words) > $excerpt_length ) {
+                array_pop($words);
+                $text = implode(' ', $words);
+                $text = $text . ' <a href="'.get_post_type_archive_link( $this->cpt ).'">Read More ></a>';
+            } else {
+                $text = implode(' ', $words);
+            }
+    
+        
+        return apply_filters('wp_trim_excerpt', $text, $raw_excerpt);
+        //return $text;
+    }
   } //End Class
 } //End if class exists statement
 
@@ -206,7 +235,7 @@ class MSD_Widget_Random_Testimonial extends WP_Widget {
         echo $before_widget; 
         if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } 
         print '<div class="wrap">';
-        print $cpt->testimonial_shortcode_handler(array('link'=>$linktext)); 
+        print $cpt->testimonial_shortcode_handler(array('link'=>$linktext,'length'=>30)); 
         print '
         <div class="clearfix"></div>
         </div>';

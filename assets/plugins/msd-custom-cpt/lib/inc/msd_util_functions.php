@@ -1,6 +1,6 @@
 <?php
 if ( ! function_exists( 'msd_trim_headline' ) ) :
-	function msd_trim_headline($text, $length = 35) {
+	function msd_trim_headline($text, $length = 35, $link = false) {
 		$raw_excerpt = $text;
 		if ( '' == $text ) {
 			$text = get_the_content('');
