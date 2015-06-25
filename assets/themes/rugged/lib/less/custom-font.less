@@ -359,12 +359,14 @@ you can use the generic selector below, but it's slower:
 .msd-fa, .msd-icon{
   &.circle, &.square{
     &:before{
-      height: 3em;
-      width: 3em;
-      text-align: center;
-      padding: 1em;
-      border: 1px solid @white;
+      border: 1px solid #ffffff;
       display: inline-block;
+      font-size: 4em;
+      height: 2em;
+      line-height: 1.5;
+      padding: 0.5em;
+      text-align: center;
+      width: 2em;
     }
   }
   &.block{
