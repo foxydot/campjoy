@@ -8823,8 +8823,11 @@ Site Footer
 .safari .section.section-testimonials .quote p:after {
   top: 0.25em;
 }
-.site-inner {
+.site-container {
   background: #f8f8f8;
+}
+.site-inner {
+  background: transparent;
 }
 .site-inner .widget {
   background: #ffffff;

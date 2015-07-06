@@ -48,3 +48,11 @@
   background-size: cover;
   min-height: 600px;
 }
+.footer-widgets {
+  background: #000000;
+  position: relative;
+}
+.footer-widgets > .wrap {
+  position: relative;
+  top: -200px;
+}

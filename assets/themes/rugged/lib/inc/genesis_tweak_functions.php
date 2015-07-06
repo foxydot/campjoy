@@ -355,11 +355,11 @@ function msdlab_maybe_wrap_inner(){
 /*** FOOTER ***/
 
 function msdlab_do_footer_widget(){
-    print '<div id="page_footer_widget" class="page-footer-widget">';
     if(is_active_sidebar('msdlab_page_footer')){
+        print '<div id="page_footer_widget" class="page-footer-widget">';
         dynamic_sidebar('msdlab_page_footer');
+        print '</div>';
     }
-    print '</div>';
 }
 /**
  * Menu area for footer menus
