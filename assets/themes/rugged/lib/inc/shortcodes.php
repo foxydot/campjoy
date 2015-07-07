@@ -135,17 +135,29 @@ add_shortcode('button','msdlab_button_function');
 function msdlab_button_function($atts, $content = null){	
 	extract( shortcode_atts( array(
       'url' => null,
-	  'target' => '_self'
+	  'target' => '_self',
+	  'style' => false,
       ), $atts ) );
+      $classes[] = "button";
       if(strstr($url,'mailto:',0)){
           $parts = explode(':',$url);
           if(is_email($parts[1])){
               $url = $parts[0].':'.antispambot($parts[1]);
           }
       }
-	$ret = '<div class="button-wrapper">
-<a class="button" href="'.$url.'" target="'.$target.'">'.remove_wpautop($content).'</a>
-</div>';
+      if($style){
+          $classes[] = 'col-xs-12';
+          $classes[] = $style;
+          switch($style){
+              case 'book':
+              case 'trophy':
+              case 'photo':
+                  $classes[] = 'col-md-6';
+                  break;
+          }
+      }
+      $classes = implode(' ',$classes);
+	$ret = '<a class="'.$classes.'" href="'.$url.'" target="'.$target.'">'.remove_wpautop($content).'</a>';
 	return $ret;
 }
 add_shortcode('hero','msdlab_landing_page_hero');

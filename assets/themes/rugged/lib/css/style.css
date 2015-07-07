@@ -7000,7 +7000,7 @@ section.layerslider_widget {
 .widget_random_testimonial .link-wrapper a {
   text-transform: uppercase;
   text-align: center;
-  color: #31b3d5;
+  color: #1d398d;
   background: #ffdf01;
   display: block;
   padding: 1em;
@@ -7375,7 +7375,7 @@ Site Navigation
 .nav-primary li.menu-item .sub-menu li.menu-item a {
   background-color: transparent;
   border: 0;
-  color: #1b6f85;
+  color: #0c1738;
   padding: 1rem 0;
   width: 100%;
   text-transform: none;
@@ -8424,7 +8424,7 @@ Site Footer
   list-style-type: circle;
 }
 .sectioned-page-wrapper .section.bkg-blue {
-  background-color: #31b3d5;
+  background-color: #1d398d;
 }
 .sectioned-page-wrapper .section.bkg-blue .section-subtitle {
   color: #5e5f61;
@@ -8841,7 +8841,6 @@ Site Footer
   margin: 0 auto;
 }
 .page-title-area .banner .texturize .gradient {
-  min-height: 400px;
   background: -moz-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
   /* FF3.6+ */
   background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1a1a1a), color-stop(10%, rgba(26, 26, 26, 0.4)), color-stop(90%, rgba(26, 26, 26, 0.4)), color-stop(100%, #1a1a1a));
@@ -8857,10 +8856,14 @@ Site Footer
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#1a1a1a', GradientType=1);
   /* IE6-9 */
 }
+.page-title-area .banner .texturize .gradient .wrap {
+  min-height: 400px;
+  position: relative;
+}
 .page-title-area .section-title,
 .page-title-area .page-title,
 .page-title-area .entry-title {
-  padding: 1.2em 0;
+  padding: 1.2em 0 0;
   margin: 0;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
@@ -8872,6 +8875,8 @@ Site Footer
   font-weight: 300;
   line-height: 1;
   width: 500px;
+  position: absolute;
+  bottom: 0;
 }
 .page-title-area .section-title a,
 .page-title-area .page-title a,
@@ -8891,6 +8896,7 @@ Site Footer
 .page-title-area .section-title:before,
 .page-title-area .page-title:before,
 .page-title-area .entry-title:before {
+  font-family: reversed-out-icons;
   content: '';
   height: 100px;
   width: 100px;
@@ -8899,6 +8905,8 @@ Site Footer
   display: inline;
   margin-right: 1rem;
   float: left;
+  position: relative;
+  top: -0.8em;
 }
 .subtitle-wrapper {
   background-color: #000000;
@@ -8985,6 +8993,76 @@ Site Footer
 }
 .footer-widgets .msd-connected .widget-wrap .wrap div.last-child {
   padding-right: 0;
+}
+a.button.team {
+  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 40px;
+  font-size: 4rem;
+  line-height: 1.625;
+  color: #ffffff;
+  border-radius: 0;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  background: url(../img/bkg-team.jpg) no-repeat center center;
+  display: inline-block;
+  margin: 0;
+}
+a.button.team:after {
+  content: '';
+}
+a.button.book,
+a.button.trophy,
+a.button.photo {
+  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1.6rem;
+  line-height: 1.625;
+  color: #1d398d;
+  border-radius: 0;
+  padding: 2em 5em;
+  text-align: center;
+  text-transform: uppercase;
+  display: inline-block;
+  min-height: 200px;
+}
+a.button.book:after,
+a.button.trophy:after,
+a.button.photo:after {
+  content: '';
+}
+a.button.book:hover,
+a.button.trophy:hover,
+a.button.photo:hover {
+  color: #1d398d;
+}
+a.button.book.odd,
+a.button.trophy.odd,
+a.button.photo.odd {
+  border-right: #f8f8f8 solid 10px;
+}
+a.button.book.odd:hover,
+a.button.trophy.odd:hover,
+a.button.photo.odd:hover {
+  border-right: #f8f8f8 solid 10px;
+}
+a.button:before {
+  font-family: reversed-out-icons;
+  display: block;
+  font-size: 3em;
+}
+a.button.book:before {
+  content: 'E';
+}
+a.button.trophy:before {
+  content: 'F';
+}
+a.button.photo:before {
+  content: 'D';
 }
 .nav-responsive ul,
 .nav-responsive li,

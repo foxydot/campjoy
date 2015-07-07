@@ -16,7 +16,6 @@
     .texturize{
       //background-image: url(../img/bkg-dots.png);
       .gradient{
-        min-height: 400px;
 background: -moz-linear-gradient(left,  rgba(26,26,26,1) 0%, rgba(26,26,26,0.4) 10%, rgba(26,26,26,0.4) 90%, rgba(26,26,26,1) 100%); /* FF3.6+ */
 background: -webkit-gradient(linear, left top, right top, color-stop(0%,rgba(26,26,26,1)), color-stop(10%,rgba(26,26,26,0.4)), color-stop(90%,rgba(26,26,26,0.4)), color-stop(100%,rgba(26,26,26,1))); /* Chrome,Safari4+ */
 background: -webkit-linear-gradient(left,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%,rgba(26,26,26,0.4) 90%,rgba(26,26,26,1) 100%); /* Chrome10+,Safari5.1+ */
@@ -24,13 +23,16 @@ background: -o-linear-gradient(left,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%
 background: -ms-linear-gradient(left,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%,rgba(26,26,26,0.4) 90%,rgba(26,26,26,1) 100%); /* IE10+ */
 background: linear-gradient(to right,  rgba(26,26,26,1) 0%,rgba(26,26,26,0.4) 10%,rgba(26,26,26,0.4) 90%,rgba(26,26,26,1) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#1a1a1a',GradientType=1 ); /* IE6-9 */
-
+          .wrap{
+            min-height: 400px;
+            position: relative;
+          }
 
       }
     }
   }
   .section-title,.page-title,.entry-title{
-    padding: 1.2em 0;
+    padding: 1.2em 0 0;
     margin:0;
     .customheader(4.2);
     color: @white;
@@ -38,6 +40,8 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
     font-weight: 300;
     line-height: 1;
     width: 500px;
+    position: absolute;
+    bottom: 0;
     a, a:visited {
       color: @white;
       opacity: 0.5;
@@ -47,7 +51,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
       opacity: 1;
     }
   }
+  
   .section-title:before,.page-title:before,.entry-title:before{
+    .roicons;
     content: '';
     height: 100px;
     width: 100px;
@@ -56,7 +62,10 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
     display: inline;
     margin-right: 1rem;
     float: left;
+    position: relative;
+    top: -0.8em;
   }
+  
 }
 .subtitle-wrapper{
   background-color: @black;
@@ -113,5 +122,60 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
         }
       }
     }
+  }
+}
+
+a.button.team{
+  .customheader(4);
+  color: @white;
+  border-radius: 0;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
+  padding-left: 0;
+  padding-right: 0;
+  text-align: center;
+  background: url(../img/bkg-team.jpg) no-repeat center center;
+  display: inline-block;
+  margin: 0;
+    &:after{
+      content: '';
+    }
+}
+a.button{
+  &.book,&.trophy,&.photo{
+    .customheader(1.6);
+    color: @blue;
+    border-radius: 0;
+    padding:2em 5em;
+    text-align: center;
+    text-transform: uppercase;
+    display: inline-block;
+    min-height: 200px;
+    &:after{
+      content: '';
+    }
+    &:hover{
+      color: @blue;
+    }
+    &.odd{
+      border-right: @offwhite solid 10px;
+      &:hover{
+        border-right: @offwhite solid 10px;
+      }
+    }
+  }
+  &:before{
+    .roicons;
+    display: block;
+    font-size: 3em;
+  }
+  &.book:before{
+    content: 'E';
+  }
+  &.trophy:before{
+    content: 'F';
+  }
+  &.photo:before{
+    content: 'D';
   }
 }
