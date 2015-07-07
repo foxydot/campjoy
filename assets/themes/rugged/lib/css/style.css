@@ -8897,6 +8897,7 @@ Site Footer
 .page-title-area .page-title:before,
 .page-title-area .entry-title:before {
   font-family: reversed-out-icons;
+  text-transform: none;
   content: '';
   height: 100px;
   width: 100px;
@@ -8907,6 +8908,44 @@ Site Footer
   float: left;
   position: relative;
   top: -0.8em;
+  text-align: center;
+  font-weight: 300;
+  padding: 0.7em 0;
+}
+.section-about .section-title:before,
+.section-about .page-title:before,
+.section-about .entry-title:before {
+  content: 'G';
+}
+.section-camps .section-title:before,
+.section-camps .page-title:before,
+.section-camps .entry-title:before {
+  content: 'C';
+}
+.section-venture-out .section-title:before,
+.section-venture-out .page-title:before,
+.section-venture-out .entry-title:before {
+  content: 'B';
+}
+.section-outdoor-education .section-title:before,
+.section-outdoor-education .page-title:before,
+.section-outdoor-education .entry-title:before {
+  content: 'A';
+}
+.section-help-joy .section-title:before,
+.section-help-joy .page-title:before,
+.section-help-joy .entry-title:before {
+  content: 'F';
+}
+.section-facilities .section-title:before,
+.section-facilities .page-title:before,
+.section-facilities .entry-title:before {
+  content: 'c';
+}
+.section-contact .section-title:before,
+.section-contact .page-title:before,
+.section-contact .entry-title:before {
+  content: 'H';
 }
 .subtitle-wrapper {
   background-color: #000000;

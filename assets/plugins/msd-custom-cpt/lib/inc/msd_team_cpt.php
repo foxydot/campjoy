@@ -99,10 +99,10 @@ if (!class_exists('MSDTeamCPT')) {
                 'show_in_nav_menus' => true,
                 'publicly_queryable' => true,
                 'exclude_from_search' => false,
-                'has_archive' => false,
+                'has_archive' => true,
                 'query_var' => true,
                 'can_export' => true,
-                'rewrite' => array('slug'=>'about-us/team/team-members','with_front'=>false),
+                'rewrite' => array('slug'=>'about-us/team-joy/','with_front'=>false),
                 'capability_type' => 'post'
             );
         
