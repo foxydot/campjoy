@@ -6393,8 +6393,7 @@ you can use the generic selector below, but it's slower:
   display: inline-block;
   font-size: 4em;
   height: 2em;
-  line-height: 1.5;
-  padding: 0.5em;
+  line-height: 2;
   text-align: center;
   width: 2em;
 }
@@ -7379,6 +7378,7 @@ Site Navigation
   color: #1b6f85;
   padding: 1rem 0;
   width: 100%;
+  text-transform: none;
 }
 .nav-primary li.menu-item .sub-menu li.last-child > a {
   border: 0;
