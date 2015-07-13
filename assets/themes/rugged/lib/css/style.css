@@ -8833,25 +8833,25 @@ Site Footer
   background: #ffffff;
 }
 .page-title-area {
-  background: #383637;
+  background: #1d398d;
 }
 .page-title-area .banner {
   background-repeat: no-repeat;
-  max-width: 1660px;
+  max-width: 1612px;
   margin: 0 auto;
 }
 .page-title-area .banner .texturize .gradient {
-  background: -moz-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
+  background: -moz-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1a1a1a), color-stop(10%, rgba(26, 26, 26, 0.4)), color-stop(90%, rgba(26, 26, 26, 0.4)), color-stop(100%, #1a1a1a));
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1d398d), color-stop(10%, rgba(29, 57, 141, 0)), color-stop(90%, rgba(29, 57, 141, 0)), color-stop(100%, #1d398d));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
+  background: -webkit-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
+  background: -o-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
+  background: -ms-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
   /* IE10+ */
-  background: linear-gradient(to right, #1a1a1a 0%, rgba(26, 26, 26, 0.4) 10%, rgba(26, 26, 26, 0.4) 90%, #1a1a1a 100%);
+  background: linear-gradient(to right, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#1a1a1a', GradientType=1);
   /* IE6-9 */
@@ -8893,9 +8893,7 @@ Site Footer
   text-decoration: none;
   opacity: 1;
 }
-.page-title-area .section-title:before,
-.page-title-area .page-title:before,
-.page-title-area .entry-title:before {
+.page-title-area .section-title:before {
   font-family: reversed-out-icons;
   text-transform: none;
   content: '';
@@ -8912,39 +8910,25 @@ Site Footer
   font-weight: 300;
   padding: 0.7em 0;
 }
-.section-about .section-title:before,
-.section-about .page-title:before,
-.section-about .entry-title:before {
+.section-about .section-title:before {
   content: 'G';
 }
-.section-camps .section-title:before,
-.section-camps .page-title:before,
-.section-camps .entry-title:before {
+.section-camps .section-title:before {
   content: 'C';
 }
-.section-venture-out .section-title:before,
-.section-venture-out .page-title:before,
-.section-venture-out .entry-title:before {
+.section-venture-out .section-title:before {
   content: 'B';
 }
-.section-outdoor-education .section-title:before,
-.section-outdoor-education .page-title:before,
-.section-outdoor-education .entry-title:before {
+.section-outdoor-education .section-title:before {
   content: 'A';
 }
-.section-help-joy .section-title:before,
-.section-help-joy .page-title:before,
-.section-help-joy .entry-title:before {
+.section-help-joy .section-title:before {
   content: 'F';
 }
-.section-facilities .section-title:before,
-.section-facilities .page-title:before,
-.section-facilities .entry-title:before {
+.section-facilities .section-title:before {
   content: 'c';
 }
-.section-contact .section-title:before,
-.section-contact .page-title:before,
-.section-contact .entry-title:before {
+.section-contact .section-title:before {
   content: 'H';
 }
 .subtitle-wrapper {
