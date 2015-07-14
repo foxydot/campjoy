@@ -215,23 +215,21 @@ if (!class_exists('MSDProjectCPT')) {
 
         function custom_query( $query ) {
             if(!is_admin()){
-                $is_project = ($query->query_vars['project_type'])?TRUE:FALSE;
+                $is_project = ($query->query['post_type'] == $this->cpt)?TRUE:FALSE;
                 if($query->is_main_query() && $query->is_search){
-                    $searchterm = $query->query_vars['s'];
-                    // we have to remove the "s" parameter from the query, because it will prevent the posts from being found
-                    $query->query_vars['s'] = "";
-                    
-                    if ($searchterm != "") {
-                        $query->set('meta_value',$searchterm);
-                        $query->set('meta_compare','LIKE');
-                    };
-                    $query->set( 'post_type', array('post','page',$this->cpt) );
-                    ts_data($query);
+                    $post_types = $query->query_vars['post_type'];
+                    if(count($post_types)==0){
+                        $post_types[] = 'post';
+                        $post_types[] = 'page';
+                    }
+                    $post_types[] = $this->cpt;
+                    $query->set( 'post_type', $post_types );
                 }
-                elseif( $query->is_main_query() && $query->is_archive ) {
-                    $query->set( 'post_type', array('post','page',$this->cpt) );
+                elseif( $query->is_main_query() && $query->is_archive && $is_project) {
+                    $query->set( 'post_type', $this->cpt );
+                    $query->set( 'meta_query', array() );
                 }
             }
-        }           
+        }          
   } //End Class
 } //End if class exists statement

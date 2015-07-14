@@ -6847,15 +6847,11 @@ img.alignright,
   margin-bottom: 20px;
   margin-bottom: 2rem;
 }
-.archive-description,
 .author-box {
   background-color: transparent;
   margin-bottom: 40px;
   margin-bottom: 4rem;
   border-bottom: 2px solid #999999;
-}
-.archive-description {
-  padding: 0;
 }
 .author-box {
   padding: 40px;
@@ -6900,12 +6896,6 @@ img.alignright,
 }
 .sidebar .widget-title a {
   border: none;
-}
-.archive-title {
-  font-size: 20px;
-  font-size: 2rem;
-  margin-bottom: 24px;
-  margin-bottom: 2.4rem;
 }
 /* Clears 
 ----------------------------------------------- */
@@ -8862,7 +8852,8 @@ Site Footer
 }
 .page-title-area .section-title,
 .page-title-area .page-title,
-.page-title-area .entry-title {
+.page-title-area .entry-title,
+.page-title-area .archive-title {
   padding: 1.2em 0 0;
   margin: 0;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
@@ -8881,15 +8872,18 @@ Site Footer
 .page-title-area .section-title a,
 .page-title-area .page-title a,
 .page-title-area .entry-title a,
+.page-title-area .archive-title a,
 .page-title-area .section-title a:visited,
 .page-title-area .page-title a:visited,
-.page-title-area .entry-title a:visited {
+.page-title-area .entry-title a:visited,
+.page-title-area .archive-title a:visited {
   color: #ffffff;
   opacity: 0.5;
 }
 .page-title-area .section-title a:hover,
 .page-title-area .page-title a:hover,
-.page-title-area .entry-title a:hover {
+.page-title-area .entry-title a:hover,
+.page-title-area .archive-title a:hover {
   text-decoration: none;
   opacity: 1;
 }

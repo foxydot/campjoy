@@ -25,14 +25,10 @@ function msdlab_alter_loop_params($query){
             $query->set('order','ASC');
             $query->set('posts_per_page',-1);
             $query->set('numposts',-1);
-        } elseif ($query->is_post_type_archive('project') || $query->is_post_type_archive('testimonial')){
-           $query->set('orderby','rand');
+        } elseif($query->is_post_type_archive('testimonial')){
+            $query->set('orderby','rand');
             $query->set('posts_per_page',-1);
             $query->set('numposts',-1);
-        }
-        if($query->is_post_type_archive('project')){
-           $query->set('orderby',array('meta_value_num'=>'DESC','rand'));
-           $query->set('meta_key','_project_case_study');
         }
     }
 }
@@ -235,7 +231,7 @@ function msdlab_do_title_area(){
 }
 
 function msdlab_do_section_title(){
-    if(is_page()){
+    if(is_page() || is_archive()){
         global $post;
         if(get_section_title()!=$post->post_title){
             add_action('genesis_entry_header','genesis_do_post_title',5);
@@ -244,9 +240,14 @@ function msdlab_do_section_title(){
         print '<div class="texturize">';
         print '<div class="gradient">';
         print '<div class="wrap">';
-        print '<h2 class="section-title">';
-        print get_section_title();
-        print '</h2>';
+        if(is_page()){
+            print '<h2 class="section-title">';
+            print get_section_title();
+            print '</h2>';
+        }
+        if(is_archive()){
+            genesis_do_cpt_archive_title_description();
+        }
         print '</div>';
         print '</div>';
         print '</div>';

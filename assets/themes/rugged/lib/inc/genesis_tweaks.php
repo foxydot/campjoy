@@ -1,7 +1,7 @@
 <?php
 require_once('genesis_tweak_functions.php');
 
-//add_action('pre_get_posts','msdlab_alter_loop_params');
+add_action('pre_get_posts','msdlab_alter_loop_params');
 /*** GENERAL ***/
 add_theme_support( 'html5' );//* Add HTML5 markup structure
 add_theme_support( 'html5', array( 'comment-list', 'comment-form', 'search-form', 'gallery', 'caption' ) );
