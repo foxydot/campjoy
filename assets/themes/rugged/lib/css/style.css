@@ -9033,7 +9033,9 @@ a.button.team:after {
 }
 a.button.book,
 a.button.trophy,
-a.button.photo {
+a.button.photo,
+a.button.lightbulb,
+a.button.note {
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;
   font-size: 16px;
@@ -9049,22 +9051,30 @@ a.button.photo {
 }
 a.button.book:after,
 a.button.trophy:after,
-a.button.photo:after {
+a.button.photo:after,
+a.button.lightbulb:after,
+a.button.note:after {
   content: '';
 }
 a.button.book:hover,
 a.button.trophy:hover,
-a.button.photo:hover {
+a.button.photo:hover,
+a.button.lightbulb:hover,
+a.button.note:hover {
   color: #1d398d;
 }
 a.button.book.odd,
 a.button.trophy.odd,
-a.button.photo.odd {
+a.button.photo.odd,
+a.button.lightbulb.odd,
+a.button.note.odd {
   border-right: #f8f8f8 solid 10px;
 }
 a.button.book.odd:hover,
 a.button.trophy.odd:hover,
-a.button.photo.odd:hover {
+a.button.photo.odd:hover,
+a.button.lightbulb.odd:hover,
+a.button.note.odd:hover {
   border-right: #f8f8f8 solid 10px;
 }
 a.button:before {
@@ -9080,6 +9090,12 @@ a.button.trophy:before {
 }
 a.button.photo:before {
   content: 'D';
+}
+a.button.lightbulb:before {
+  content: 'b';
+}
+a.button.note:before {
+  content: 'G';
 }
 .nav-responsive ul,
 .nav-responsive li,

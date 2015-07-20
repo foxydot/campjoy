@@ -181,7 +181,7 @@ a.button.team{
     }
 }
 a.button{
-  &.book,&.trophy,&.photo{
+  &.book,&.trophy,&.photo,&.lightbulb,&.note{
     .customheader(1.6);
     color: @blue;
     border-radius: 0;
@@ -216,5 +216,11 @@ a.button{
   }
   &.photo:before{
     content: 'D';
+  }
+  &.lightbulb:before{
+    content: 'b';
+  }
+  &.note:before{
+    content: 'G';
   }
 }

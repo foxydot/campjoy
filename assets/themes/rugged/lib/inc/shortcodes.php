@@ -152,6 +152,8 @@ function msdlab_button_function($atts, $content = null){
               case 'book':
               case 'trophy':
               case 'photo':
+              case 'lightbulb':
+              case 'note':
                   $classes[] = 'col-md-6';
                   break;
           }
