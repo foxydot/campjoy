@@ -8823,7 +8823,7 @@ Site Footer
   background: #ffffff;
 }
 .page-title-area {
-  background: #1d398d;
+  background: #484e63;
 }
 .page-title-area .banner {
   background-repeat: no-repeat;
@@ -8831,17 +8831,17 @@ Site Footer
   margin: 0 auto;
 }
 .page-title-area .banner .texturize .gradient {
-  background: -moz-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
+  background: -moz-linear-gradient(left, #484e63 0%, rgba(72, 78, 99, 0) 10%, rgba(72, 78, 99, 0) 90%, #484e63 100%);
   /* FF3.6+ */
-  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #1d398d), color-stop(10%, rgba(29, 57, 141, 0)), color-stop(90%, rgba(29, 57, 141, 0)), color-stop(100%, #1d398d));
+  background: -webkit-gradient(linear, left top, right top, color-stop(0%, #484e63), color-stop(10%, rgba(72, 78, 99, 0)), color-stop(90%, rgba(72, 78, 99, 0)), color-stop(100%, #484e63));
   /* Chrome,Safari4+ */
-  background: -webkit-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
+  background: -webkit-linear-gradient(left, #484e63 0%, rgba(72, 78, 99, 0) 10%, rgba(72, 78, 99, 0) 90%, #484e63 100%);
   /* Chrome10+,Safari5.1+ */
-  background: -o-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
+  background: -o-linear-gradient(left, #484e63 0%, rgba(72, 78, 99, 0) 10%, rgba(72, 78, 99, 0) 90%, #484e63 100%);
   /* Opera 11.10+ */
-  background: -ms-linear-gradient(left, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
+  background: -ms-linear-gradient(left, #484e63 0%, rgba(72, 78, 99, 0) 10%, rgba(72, 78, 99, 0) 90%, #484e63 100%);
   /* IE10+ */
-  background: linear-gradient(to right, #1d398d 0%, rgba(29, 57, 141, 0) 10%, rgba(29, 57, 141, 0) 90%, #1d398d 100%);
+  background: linear-gradient(to right, #484e63 0%, rgba(72, 78, 99, 0) 10%, rgba(72, 78, 99, 0) 90%, #484e63 100%);
   /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#1a1a1a', endColorstr='#1a1a1a', GradientType=1);
   /* IE6-9 */
@@ -8868,6 +8868,7 @@ Site Footer
   width: 500px;
   position: absolute;
   bottom: 0;
+  text-shadow: 0 0 4px #000000;
 }
 .page-title-area .section-title a,
 .page-title-area .page-title a,

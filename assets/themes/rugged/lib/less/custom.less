@@ -8,7 +8,7 @@
   }
 }
 .page-title-area{
-  background: @blue;
+  background: desaturate(@blue,50%);
   .banner{
     background-repeat: no-repeat;
         max-width: 1612px;
@@ -16,12 +16,12 @@
     .texturize{
       //background-image: url(../img/bkg-dots.png);
       .gradient{
-background: -moz-linear-gradient(left,  fade(@blue,100%) 0%, fade(@blue,0%) 10%, fade(@blue,0%) 90%, fade(@blue,100%) 100%); /* FF3.6+ */
-background: -webkit-gradient(linear, left top, right top, color-stop(0%,fade(@blue,100%)), color-stop(10%,fade(@blue,0%)), color-stop(90%,fade(@blue,0%)), color-stop(100%,fade(@blue,100%))); /* Chrome,Safari4+ */
-background: -webkit-linear-gradient(left,  fade(@blue,100%) 0%,fade(@blue,0%) 10%,fade(@blue,0%) 90%,fade(@blue,100%) 100%); /* Chrome10+,Safari5.1+ */
-background: -o-linear-gradient(left,  fade(@blue,100%) 0%,fade(@blue,0%) 10%,fade(@blue,0%) 90%,fade(@blue,100%) 100%); /* Opera 11.10+ */
-background: -ms-linear-gradient(left,  fade(@blue,100%) 0%,fade(@blue,0%) 10%,fade(@blue,0%) 90%,fade(@blue,100%) 100%); /* IE10+ */
-background: linear-gradient(to right,  fade(@blue,100%) 0%,fade(@blue,0%) 10%,fade(@blue,0%) 90%,fade(@blue,100%) 100%); /* W3C */
+background: -moz-linear-gradient(left,  fade(desaturate(@blue,50%),100%) 0%, fade(desaturate(@blue,50%),0%) 10%, fade(desaturate(@blue,50%),0%) 90%, fade(desaturate(@blue,50%),100%) 100%); /* FF3.6+ */
+background: -webkit-gradient(linear, left top, right top, color-stop(0%,fade(desaturate(@blue,50%),100%)), color-stop(10%,fade(desaturate(@blue,50%),0%)), color-stop(90%,fade(desaturate(@blue,50%),0%)), color-stop(100%,fade(desaturate(@blue,50%),100%))); /* Chrome,Safari4+ */
+background: -webkit-linear-gradient(left,  fade(desaturate(@blue,50%),100%) 0%,fade(desaturate(@blue,50%),0%) 10%,fade(desaturate(@blue,50%),0%) 90%,fade(desaturate(@blue,50%),100%) 100%); /* Chrome10+,Safari5.1+ */
+background: -o-linear-gradient(left,  fade(desaturate(@blue,50%),100%) 0%,fade(desaturate(@blue,50%),0%) 10%,fade(desaturate(@blue,50%),0%) 90%,fade(desaturate(@blue,50%),100%) 100%); /* Opera 11.10+ */
+background: -ms-linear-gradient(left,  fade(desaturate(@blue,50%),100%) 0%,fade(desaturate(@blue,50%),0%) 10%,fade(desaturate(@blue,50%),0%) 90%,fade(desaturate(@blue,50%),100%) 100%); /* IE10+ */
+background: linear-gradient(to right,  fade(desaturate(@blue,50%),100%) 0%,fade(desaturate(@blue,50%),0%) 10%,fade(desaturate(@blue,50%),0%) 90%,fade(desaturate(@blue,50%),100%) 100%); /* W3C */
 filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', endColorstr='#1a1a1a',GradientType=1 ); /* IE6-9 */
           .wrap{
             min-height: 400px;
@@ -42,6 +42,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
     width: 500px;
     position: absolute;
     bottom: 0;
+    text-shadow: 0 0 4px @black;
     a, a:visited {
       color: @white;
       opacity: 0.5;
