@@ -57,7 +57,7 @@ if (!class_exists('MSDFactsCPT')) {
 		        'labels' => $labels,
 		        'hierarchical' => false,
 		        'description' => 'Fact',
-		        'supports' => array('title', 'author' ,'genesis-cpt-archives-settings'),
+		        'supports' => array('title', 'editor', 'author' ,'genesis-cpt-archives-settings'),
 		        'taxonomies' => array(),
 		        'public' => true,
 		        'show_ui' => true,
@@ -230,7 +230,7 @@ class MSD_Widget_Random_Fact extends WP_Widget {
         echo $before_widget; 
         if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } 
         print '<div class="wrap">';
-        print $cpt->fact_shortcode_handler(array('link'=>$linktext,'length'=>30)); 
+        print $cpt->fact_shortcode_handler(array()); 
         print '
         <div class="clearfix"></div>
         </div>';

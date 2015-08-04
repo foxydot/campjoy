@@ -1,48 +1,5 @@
 <?php
-add_shortcode('hex','msdlab_make_hex');
-function msdlab_make_hex($atts, $content = null){
-    extract( shortcode_atts( array(
-      'color' => 'green',
-      ), $atts ) );
-        $ret = '
-        <div class="hexa '.$color.'">
-            <div class="hexa_text">'.$content.'</div>
-            <div class="hexa_image"></div>
-            <div class="hexagon scale_0">
-              <div class="h_sq t_sq_1 color_0"></div>
-              <div class="h_sq t_sq_2 color_0"></div>
-              <div class="h_sq t_sq_3 color_0"></div>
-              <div class="h_sq t_sq_4 color_0"></div>
-              <div class="h_sq t_sq_5 color_0"></div>
-              <div class="h_sq t_sq_6 color_0"></div>
-            </div>
-            <div class="hexagon scale_1">
-              <div class="h_sq t_sq_1 color_1"></div>
-              <div class="h_sq t_sq_2 color_1"></div>
-              <div class="h_sq t_sq_3 color_1"></div>
-              <div class="h_sq t_sq_4 color_1"></div>
-              <div class="h_sq t_sq_5 color_1"></div>
-              <div class="h_sq t_sq_6 color_1"></div>
-            </div>
-            <div class="hexagon scale_2">
-              <div class="h_sq t_sq_1 color_2"></div>
-              <div class="h_sq t_sq_2 color_2"></div>
-              <div class="h_sq t_sq_3 color_2"></div>
-              <div class="h_sq t_sq_4 color_2"></div>
-              <div class="h_sq t_sq_5 color_2"></div>
-              <div class="h_sq t_sq_6 color_2"></div>
-            </div>
-            <div class="hexagon scale_3">
-              <div class="h_sq t_sq_1 color_3"></div>
-              <div class="h_sq t_sq_2 color_3"></div>
-              <div class="h_sq t_sq_3 color_3"></div>
-              <div class="h_sq t_sq_4 color_3"></div>
-              <div class="h_sq t_sq_5 color_3"></div>
-              <div class="h_sq t_sq_6 color_3"></div>
-            </div>
-      </div>';
-      return $ret;
-}
+
 
 add_shortcode('menu','msdlab_display_menu');
 function msdlab_display_menu($atts, $content = null){

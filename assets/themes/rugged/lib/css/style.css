@@ -7921,9 +7921,11 @@ Sidebars
   font-size: 24px;
   font-size: 2.4rem;
   line-height: 1.625;
+  text-transform: uppercase;
   color: #9ca728;
   margin: 1rem;
   text-align: center;
+  line-height: 1.2;
 }
 .sidebar .enews-widget {
   background-color: #333;
@@ -8822,6 +8824,43 @@ Site Footer
 .site-inner .widget {
   background: #ffffff;
 }
+.section-title,
+.page-title,
+.entry-title,
+.archive-title {
+  padding: 1rem;
+  margin: 0;
+  font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
+  font-weight: 400;
+  font-size: 42px;
+  font-size: 4.2rem;
+  line-height: 1.625;
+  color: #ffffff;
+  text-transform: uppercase;
+  font-weight: 300;
+  line-height: 1;
+  text-shadow: 0 0 4px #000000;
+  margin: 0 auto;
+  max-width: 1160px;
+}
+.section-title a,
+.page-title a,
+.entry-title a,
+.archive-title a,
+.section-title a:visited,
+.page-title a:visited,
+.entry-title a:visited,
+.archive-title a:visited {
+  color: #ffffff;
+  opacity: 0.5;
+}
+.section-title a:hover,
+.page-title a:hover,
+.entry-title a:hover,
+.archive-title a:hover {
+  text-decoration: none;
+  opacity: 1;
+}
 .page-title-area {
   background: #484e63;
 }
@@ -8850,10 +8889,10 @@ Site Footer
   min-height: 400px;
   position: relative;
 }
-.page-title-area .section-title,
-.page-title-area .page-title,
-.page-title-area .entry-title,
-.page-title-area .archive-title {
+.page-title-area .banner .texturize .gradient .section-title,
+.page-title-area .banner .texturize .gradient .page-title,
+.page-title-area .banner .texturize .gradient .entry-title,
+.page-title-area .banner .texturize .gradient .archive-title {
   padding: 1.2em 0 0;
   margin: 0;
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
@@ -8870,21 +8909,21 @@ Site Footer
   bottom: 0;
   text-shadow: 0 0 4px #000000;
 }
-.page-title-area .section-title a,
-.page-title-area .page-title a,
-.page-title-area .entry-title a,
-.page-title-area .archive-title a,
-.page-title-area .section-title a:visited,
-.page-title-area .page-title a:visited,
-.page-title-area .entry-title a:visited,
-.page-title-area .archive-title a:visited {
+.page-title-area .banner .texturize .gradient .section-title a,
+.page-title-area .banner .texturize .gradient .page-title a,
+.page-title-area .banner .texturize .gradient .entry-title a,
+.page-title-area .banner .texturize .gradient .archive-title a,
+.page-title-area .banner .texturize .gradient .section-title a:visited,
+.page-title-area .banner .texturize .gradient .page-title a:visited,
+.page-title-area .banner .texturize .gradient .entry-title a:visited,
+.page-title-area .banner .texturize .gradient .archive-title a:visited {
   color: #ffffff;
   opacity: 0.5;
 }
-.page-title-area .section-title a:hover,
-.page-title-area .page-title a:hover,
-.page-title-area .entry-title a:hover,
-.page-title-area .archive-title a:hover {
+.page-title-area .banner .texturize .gradient .section-title a:hover,
+.page-title-area .banner .texturize .gradient .page-title a:hover,
+.page-title-area .banner .texturize .gradient .entry-title a:hover,
+.page-title-area .banner .texturize .gradient .archive-title a:hover {
   text-decoration: none;
   opacity: 1;
 }

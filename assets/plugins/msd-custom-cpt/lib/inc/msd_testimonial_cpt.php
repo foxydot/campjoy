@@ -190,7 +190,7 @@ if (!class_exists('MSDTestimonialCPT')) {
             }
             
             
-    function msd_trim_quote($text, $length = 35) {
+    function msd_trim_quote($text, $length = 35,$link = false) {
         $raw_excerpt = $text;
         if ( '' == $text ) {
             $text = get_the_content('');
@@ -205,7 +205,11 @@ if (!class_exists('MSDTestimonialCPT')) {
             if ( count($words) > $excerpt_length ) {
                 array_pop($words);
                 $text = implode(' ', $words);
-                $text = $text . ' <a href="'.get_post_type_archive_link( $this->cpt ).'">Read More ></a>';
+                if($link){
+                    $text = $text . ' <a href="'.$link.'">Read More ></a>';
+                } else {
+                    $text = $text . ' <a href="'.get_post_type_archive_link( $this->cpt ).'">Read More ></a>';
+                }
             } else {
                 $text = implode(' ', $words);
             }
@@ -228,7 +232,12 @@ class MSD_Widget_Random_Testimonial extends WP_Widget {
         $title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
         $linktext = apply_filters( 'widget_title', empty($instance['linktext']) ? 'Read More' : $instance['linktext'], $instance, $this->id_base);
         echo $before_widget; 
-        if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } 
+        if ( !empty( $title ) ) {
+             $title_array = explode(" ",$title);
+             $title_bold = array_pop($title_array);
+             $title = implode(" ", $title_array)." <br /><strong>". $title_bold . "</strong>";
+             echo $before_title . $title . $after_title; 
+        } 
         print '<div class="wrap">';
         print $cpt->testimonial_shortcode_handler(array('link'=>$linktext,'length'=>30)); 
         print '
