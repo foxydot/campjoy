@@ -6,7 +6,7 @@ if(!class_exists('WPAlchemy_MetaBox')){
 add_action('init','add_custom_metaboxes');
 add_action('admin_footer','subtitle_footer_hook');
 add_action( 'admin_print_scripts', 'my_metabox_styles' );
-add_action( 'genesis_after_header', 'msdlab_do_post_subtitle' );
+add_action( 'genesis_after_header', 'msdlab_do_post_subtitle', 30 );
 
 
 function add_custom_metaboxes(){

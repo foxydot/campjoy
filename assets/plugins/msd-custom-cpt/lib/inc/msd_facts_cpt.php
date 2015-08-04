@@ -151,17 +151,8 @@ if (!class_exists('MSDFactsCPT')) {
             $ret = false;
             foreach($facts AS $fact){
                 $fact_info->the_meta($fact->ID);
-                $quote = apply_filters('the_content',$fact_info->get_the_value('quote'));
-                if($length){
-                    $quote = self::msd_trim_quote($quote,$length,get_the_permalink($fact->ID));
-                }
-                $name = $fact_info->get_the_value('attribution')!=''?'<span class="name">'.$fact_info->get_the_value('attribution').',</span> ':'';
-                $position = $fact_info->get_the_value('position')!=''?'<span class="position">'.$fact_info->get_the_value('position').',</span> ':'';
-                $organization = $fact_info->get_the_value('organization')!=''?'<span class="organization">'.$fact_info->get_the_value('organization').'</span> ':'';
-                $location = $fact_info->get_the_value('location')!=''?'<span class="location">'.$fact_info->get_the_value('location').'</span> ':'';
                 $ret .= '<div class="col-md-'. 12/$columns .' col-xs-12 item-wrapper">
-                <div class="quote">'.$quote.'</div>
-                <div class="attribution">'.$name.$position.$organization.$location.'</div>
+                '.apply_filters('the_content',$fact->post_content).'
                 </div>';
             }
             if($link){
