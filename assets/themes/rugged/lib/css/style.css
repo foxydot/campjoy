@@ -7006,6 +7006,22 @@ section.layerslider_widget {
   text-decoration: none;
   background: #efa930;
 }
+.widget_fact_slider .carousel .carousel-inner .item {
+  margin: 0 15%;
+  min-height: 200px;
+}
+.widget_fact_slider .carousel .carousel-control {
+  background: none;
+  text-decoration: none;
+  border: 0;
+  width: 10%;
+}
+.widget_fact_slider .carousel .carousel-control:hover {
+  text-decoration: none;
+}
+.widget_fact_slider .carousel .carousel-control .glyphicon {
+  color: #999999;
+}
 /*
 Plugins
 ---------------------------------------------------------------------------------------------------- */

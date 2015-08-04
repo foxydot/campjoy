@@ -187,7 +187,7 @@ if (!class_exists('MSDTestimonialCPT')) {
                 $position = $testimonial_info->get_the_value('position')!=''?'<span class="position">'.$testimonial_info->get_the_value('position').',</span> ':'';
                 $organization = $testimonial_info->get_the_value('organization')!=''?'<span class="organization">'.$testimonial_info->get_the_value('organization').'</span> ':'';
                 $location = $testimonial_info->get_the_value('location')!=''?'<span class="location">'.$testimonial_info->get_the_value('location').'</span> ':'';
-                $ret .= '<div class="col-md-'. 12/$columns .' col-xs-12 item-wrapper">
+                $ret .= '<div class="col-xs-12 item-wrapper">
                 <div class="quote">'.$quote.'</div>
                 <div class="attribution">'.$name.$position.$organization.$location.'</div>
                 </div>';

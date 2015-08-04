@@ -21,8 +21,8 @@ if (!class_exists('MSDFactsCPT')) {
             add_action( 'init', array(&$this,'register_cpt_fact') );
             add_action( 'init', array( &$this, 'add_metaboxes' ) );
             
-            if(class_exists('MSD_Widget_Random_Fact')){
-                add_action('widgets_init',array('MSD_Widget_Random_Fact','init'),10);
+            if(class_exists('MSD_Widget_Fact_Slider')){
+                add_action('widgets_init',array('MSD_Widget_Fact_Slider','init'),10);
             }
 			add_action('admin_head', array(&$this,'plugin_header'));
 			add_action('admin_print_scripts', array(&$this,'add_admin_scripts') );
@@ -208,22 +208,44 @@ if (!class_exists('MSDFactsCPT')) {
   } //End Class
 } //End if class exists statement
 
-class MSD_Widget_Random_Fact extends WP_Widget {
+class MSD_Widget_Fact_Slider extends WP_Widget {
     function __construct() {
-        $widget_ops = array('classname' => 'widget_random_fact', 'description' => __('Displays a random fact.'));
-        parent::__construct('widget_random_fact', __('Random Fact'), $widget_ops, $control_ops);
+        $widget_ops = array('classname' => 'widget_fact_slider', 'description' => __('Displays some random facts in a slider.'));
+        parent::__construct('widget_fact_slider', __('Fact Slider'), $widget_ops, $control_ops);
     }
     function widget( $args, $instance ) {
         $cpt = new MSDFactsCPT();
         extract($args);
         $title = apply_filters( 'widget_title', empty($instance['title']) ? '' : $instance['title'], $instance, $this->id_base);
         $linktext = apply_filters( 'widget_title', empty($instance['linktext']) ? 'Read More' : $instance['linktext'], $instance, $this->id_base);
+        $args = array(
+                'post_type' => $cpt->cpt,
+                'orderby' => rand,
+                'posts_per_page' => $instance['items'],
+            );
+        $facts = get_posts($args);
         echo $before_widget; 
         if ( !empty( $title ) ) { echo $before_title . $title . $after_title; } 
-        print '<div class="wrap">';
-        print $cpt->fact_shortcode_handler(array()); 
+        print '<div id="fact-carousel" class="carousel slide" data-ride="carousel">
+        <div class="wrap carousel-inner" role="listbox">';
+        $i = 0;
+        foreach($facts as $fact){
+            $active = $i == 0?' active':'';
+            print '<div class="item'.$active.'">';
+            print apply_filters('the_content',$fact->post_content);
+            print '</div>';
+            $i++;
+        }
         print '
-        <div class="clearfix"></div>
+        </div>
+        <a class="left carousel-control" href="#fact-carousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#fact-carousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
         </div>';
         echo $after_widget;
     }
@@ -232,6 +254,7 @@ class MSD_Widget_Random_Fact extends WP_Widget {
         $instance = $old_instance;
         $instance['title'] = strip_tags($new_instance['title']);
         $instance['linktext'] = strip_tags($new_instance['linktext']);
+        $instance['items'] = $new_instance['items'];
         
         return $instance;
     }
@@ -243,11 +266,20 @@ class MSD_Widget_Random_Fact extends WP_Widget {
         <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
         <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>" name="<?php echo $this->get_field_name('title'); ?>" type="text" value="<?php echo esc_attr($title); ?>" /></p>
         <p><label for="<?php echo $this->get_field_id('linktext'); ?>"><?php _e('Link Text:'); ?></label><input class="widefat" id="<?php echo $this->get_field_id('linktext'); ?>" name="<?php echo $this->get_field_name('linktext'); ?>" type="text" value="<?php echo esc_attr($linktext); ?>" /></p>
+        <p><label for="<?php echo $this->get_field_id('items'); ?>"><?php _e('Number of Facts:'); ?></label><select class="widefat" id="<?php echo $this->get_field_id('items'); ?>" name="<?php echo $this->get_field_name('items'); ?>">
+            <?php
+            for($i=1;$i<10;$i++){
+                ?>
+                <option value="<?php print $i; ?>"<?php print $i == $instance['items']?' selected':''; ?>><?php print $i; ?></option>
+                <?php
+            }
+             ?>
+        </select></p>
 <?php
     }
     function init() {
         if ( !is_blog_installed() )
             return;
-        register_widget('MSD_Widget_Random_Fact');
+        register_widget('MSD_Widget_Fact_Slider');
     }  
 }
