@@ -7714,6 +7714,10 @@ article.entry {
   color: #9ca728;
   line-height: 1.25;
 }
+.entry-header .entry-title a,
+.entry-header .entry-title a:link {
+  color: #9ca728;
+}
 .entry-header .entry-subtitle {
   font-family: "Raleway", "Trebuchet MS", Calibri, sans-serif;
   font-weight: 400;

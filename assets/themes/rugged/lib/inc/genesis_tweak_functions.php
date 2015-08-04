@@ -91,7 +91,13 @@ function msdlab_header_right(){
         ) );
     }
 }
-
+function msdlab_maybe_move_title(){
+    if(!is_home()){
+        remove_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
+        add_action('msdlab_title_area','msdlab_do_section_title');
+        add_action('genesis_after_header','msdlab_do_title_area');
+    }
+}
 function msdlab_do_header() {
 
     genesis_markup( array(
@@ -245,7 +251,7 @@ function msdlab_do_section_title(){
             print get_section_title();
             print '</h2>';
         }
-        if(is_archive()){
+        if(is_archive() && !is_cpt('post')){
             genesis_do_cpt_archive_title_description();
         }
         print '</div>';
@@ -254,8 +260,11 @@ function msdlab_do_section_title(){
         print '</div>';
     } elseif(is_single()) {
         genesis_do_post_title();
+        if(is_cpt('post')){
+            //remove_action('genesis_entry_content','');
+        }
     } else {
-        genesis_do_post_title();
+        //genesis_do_post_title();
     }
 }
 
@@ -523,7 +532,6 @@ class Description_Walker extends Walker_Nav_Menu
 function msdlab_do_social_footer(){
     global $msd_social;
     global $wp_filter;
-    //ts_var( $wp_filter['msdlab_title_area'] );
     
     if(has_nav_menu('footer_menu')){$footer_menu .= wp_nav_menu( array( 'theme_location' => 'footer_menu','container_class' => 'menu genesis-nav-menu nav-footer','echo' => FALSE ) );}
     
