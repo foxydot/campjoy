@@ -34,6 +34,8 @@ if (!class_exists('MSDTestimonialCPT')) {
 			//add_filter( 'pre_get_posts', array(&$this,'custom_query') );
             add_shortcode('testimonial',array(&$this,'testimonial_shortcode_handler'));
             add_shortcode('testimonials',array(&$this,'testimonial_shortcode_handler'));
+            
+            add_action('the_post',array(&$this,'single_testimonial_content'));
 		}
 		
 		function register_cpt_testimonial() {
@@ -172,6 +174,27 @@ if (!class_exists('MSDTestimonialCPT')) {
             
             return $ret;
         } 
+
+        function single_testimonial_content($post_object){
+            if($post_object->post_type == $this->cpt){
+                global $testimonial_info;
+                $testimonial_info->the_meta($post_object->ID);
+                $quote = apply_filters('the_content',$testimonial_info->get_the_value('quote'));
+                if($length){
+                    $quote = self::msd_trim_quote($quote,$length,get_the_permalink($testimonial->ID));
+                }
+                $name = $testimonial_info->get_the_value('attribution')!=''?'<span class="name">'.$testimonial_info->get_the_value('attribution').',</span> ':'';
+                $position = $testimonial_info->get_the_value('position')!=''?'<span class="position">'.$testimonial_info->get_the_value('position').',</span> ':'';
+                $organization = $testimonial_info->get_the_value('organization')!=''?'<span class="organization">'.$testimonial_info->get_the_value('organization').'</span> ':'';
+                $location = $testimonial_info->get_the_value('location')!=''?'<span class="location">'.$testimonial_info->get_the_value('location').'</span> ':'';
+                $ret .= '<div class="col-md-'. 12/$columns .' col-xs-12 item-wrapper">
+                <div class="quote">'.$quote.'</div>
+                <div class="attribution">'.$name.$position.$organization.$location.'</div>
+                </div>';
+                $post_object->post_content = $ret;
+            }
+            return $post_object;
+        }
 
         function add_metaboxes(){
                 global $post,$wpalchemy_media_access,$testimonial_info;
