@@ -26,6 +26,8 @@ if ( ! function_exists( 'msd_trim_headline' ) ) :
 		//return $text;
 	}
 endif;
+
+
 /**
  * @desc Checks to see if the given plugin is active.
  * @return boolean
@@ -66,16 +68,36 @@ if(!function_exists('msd_str_fmt')){
             case 'phone':
                 $str = preg_replace("/[^0-9]/", "", $str);
                 if(strlen($str) == 7)
-                    $ret = preg_replace("/([0-9]{3})([0-9]{4})/", "$1 $2", $str);
+                    $ret = preg_replace("/([0-9]{3})([0-9]{4})/", "$1.$2", $str);
                 elseif(strlen($str) == 10)
-                    $ret = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "$1 $2 $3", $str);
+                    $ret = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})/", "$1.$2.$3", $str);
                 else
-                    $ret = $str;
+                    $ret = preg_replace("/([0-9]{3})([0-9]{3})([0-9]{4})([0-9])/", "$1.$2.$3 ext $4", $str);
                 break;
             default:
                 $ret = $str;
                 break;
         }
         return $ret;
+    }
+}
+
+if(!function_exists('invent_featured_image')){
+    // Get URL of first image in a post
+    function invent_featured_image($postid, $size) {
+        if(has_post_thumbnail($postid)){
+            return get_the_post_thumbnail($postid,$size);
+        } else {
+            $post = get_post($postid);
+            $first_img = '';
+            $output = preg_match_all('/<img.+src=[\'"]([^\'"]+)[\'"].*?>/i', $post->post_content, $matches);
+            $first_img = $matches [0] [0];
+            //ts_data($matches);
+            // no image found display default image instead
+            if(empty($first_img)){
+                $first_img = "";
+            }
+            return $first_img;       
+        }
     }
 }

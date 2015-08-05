@@ -1,23 +1,27 @@
 <?php
-function msdlab_excerpt($content){
-    global $post;
-    return msdlab_get_excerpt($post->ID);
+if(!function_exists(msdlab_excerpt)){
+    function msdlab_excerpt($content){
+        global $post;
+        return msdlab_get_excerpt($post->ID);
+    }
 }
 
-function msdlab_get_excerpt( $post_id, $excerpt_length = 50, $trailing_character = '&nbsp;<i class="fa fa-arrow-circle-right"></i>' ) {
-    $the_post = get_post( $post_id );
-    $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_excerpt ) );
-     
-    if ( empty( $the_excerpt ) )
-        $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_content ) );
-     
-    $words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
-     
-    if( count( $words ) > $excerpt_length )
-        $words = array_slice( $words, 0, $excerpt_length );
-     
-    $the_excerpt = implode( ' ', $words ) . '<a href="'.get_permalink($post_id).'">'.$trailing_character.'</a>';
-    return $the_excerpt;
+if(!function_exists(msdlab_get_excerpt)){
+    function msdlab_get_excerpt( $post_id, $excerpt_length = 50, $trailing_character = '&nbsp;<i class="fa fa-arrow-circle-right"></i>' ) {
+        $the_post = get_post( $post_id );
+        $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_excerpt ) );
+         
+        if ( empty( $the_excerpt ) )
+            $the_excerpt = strip_tags( strip_shortcodes( $the_post->post_content ) );
+         
+        $words = explode( ' ', $the_excerpt, $excerpt_length + 1 );
+         
+        if( count( $words ) > $excerpt_length )
+            $words = array_slice( $words, 0, $excerpt_length );
+         
+        $the_excerpt = implode( ' ', $words ) . '<a href="'.get_post_permalink($post_id).'">'.$trailing_character.'</a>';
+        return $the_excerpt;
+    }
 }
 
 // cleanup tinymce for SEO
