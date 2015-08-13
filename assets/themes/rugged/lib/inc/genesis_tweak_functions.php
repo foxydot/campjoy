@@ -242,7 +242,8 @@ function msdlab_do_section_title(){
         if(get_section_title()!=$post->post_title){
             add_action('genesis_entry_header','genesis_do_post_title',5);
         }
-        print '<div class="banner clearfix" style="background-image:url('.msdlab_get_thumbnail_url($post->ID,'full').')">';
+        $banner = msdlab_get_thumbnail_url($post->ID,'full')?msdlab_get_thumbnail_url($post->ID,'full'):get_stylesheet_directory_uri().'/lib/img/default-banner.jpg';
+        print '<div class="banner clearfix" style="background-image:url('.$banner.')">';
         print '<div class="texturize">';
         print '<div class="gradient">';
         print '<div class="wrap">';

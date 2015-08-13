@@ -36,6 +36,7 @@ if (!class_exists('MSDTestimonialCPT')) {
             add_shortcode('testimonials',array(&$this,'testimonial_shortcode_handler'));
             
             add_action('the_post',array(&$this,'single_testimonial_content'));
+            
 		}
 		
 		function register_cpt_testimonial() {
@@ -197,7 +198,7 @@ if (!class_exists('MSDTestimonialCPT')) {
         }
 
         function add_metaboxes(){
-                global $post,$wpalchemy_media_access,$testimonial_info;
+                global $post,$wpalchemy_media_access,$testimonial_info;                
                 $testimonial_info = new WPAlchemy_MetaBox(array
                     (
                         'id' => '_testimonial_info',
@@ -211,7 +212,7 @@ if (!class_exists('MSDTestimonialCPT')) {
                         'prefix' => '_testimonial_' // defaults to NULL
                     ));
             }
-            
+
             
     function msd_trim_quote($text, $length = 35,$link = false) {
         $raw_excerpt = $text;
@@ -291,4 +292,5 @@ class MSD_Widget_Random_Testimonial extends WP_Widget {
             return;
         register_widget('MSD_Widget_Random_Testimonial');
     }  
+    
 }
