@@ -8788,7 +8788,8 @@ Site Footer
   position: absolute;
   bottom: 0;
 }
-.page-title-area .section-title:before {
+.page-title-area .section-title:before,
+.page-title-area .archive-title:before {
   font-family: reversed-out-icons;
   text-transform: none;
   content: '';
@@ -8825,6 +8826,9 @@ Site Footer
 }
 .section-contact .section-title:before {
   content: 'H';
+}
+.post-type-archive-testimonial .archive-title:before {
+  content: 'k';
 }
 .subtitle-wrapper {
   background-color: #000000;

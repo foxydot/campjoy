@@ -26,9 +26,8 @@ function msdlab_alter_loop_params($query){
             $query->set('posts_per_page',-1);
             $query->set('numposts',-1);
         } elseif($query->is_post_type_archive('testimonial')){
-            $query->set('orderby','rand');
-            $query->set('posts_per_page',-1);
-            $query->set('numposts',-1);
+            $query->set('posts_per_page',4);
+            $query->set('numposts',4);
         }
     }
 }
