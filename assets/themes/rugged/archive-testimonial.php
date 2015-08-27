@@ -3,7 +3,7 @@ add_action('wp_enqueue_scripts', 'msdlab_testimonial_add_scripts_and_styles');
 remove_action( 'genesis_before_loop', 'genesis_do_cpt_archive_title_description' );
 //add_action( 'msdlab_title_area', 'genesis_do_cpt_archive_title_description' );
 
-add_filter('genesis_attr_entry','msdlab_testimonial_wrapper');
+//add_filter('genesis_attr_entry','msdlab_testimonial_wrapper');
 remove_all_actions('genesis_entry_header');
 add_filter('genesis_link_post_title','msdlab_testimonial_remove_link');
 //add_action('genesis_entry_header','genesis_do_post_title'); //move the title out of the content area
@@ -16,7 +16,7 @@ add_filter( 'genesis_attr_content', 'msdlab_bootstrap_testimonial_archive_conten
 
 function msdlab_bootstrap_testimonial_archive_content_sidebar_wrap( $attributes ){
     
-    $attributes['class'] = preg_replace(' col-md-12',' row',$attributes['class']);
+    $attributes['class'] = str_ireplace(' col-md-12',' row',$attributes['class']);
     return $attributes;
 }
 
