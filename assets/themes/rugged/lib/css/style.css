@@ -7082,6 +7082,13 @@ div.gform_wrapper .gform_footer input[type="submit"] {
 img#wpstats {
   display: none;
 }
+/* Tablepress */
+.tablepress tbody td,
+.tablepress tfoot td,
+.tablepress tbody th,
+.tablepress tfoot th {
+  font-size: 0.93em;
+}
 /*
 Site Header
 ---------------------------------------------------------------------------------------------------- */
@@ -7346,7 +7353,7 @@ Site Navigation
 /* Primary Navigation
 --------------------------------------------- */
 .nav-primary {
-  margin-top: 64px;
+  margin-top: 24px;
   display: inline-block;
   float: right;
 }
