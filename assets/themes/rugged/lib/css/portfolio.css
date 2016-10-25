@@ -32,12 +32,12 @@
   display: none;
 }
 .post-type-archive-project .archive-description {
-  background: #9ca728;
+  background: #9CA728;
   text-align: center;
-  color: #ffffff;
+  color: #FFF;
 }
 .post-type-archive-project .archive-description h1 {
-  color: #ffffff;
+  color: #FFF;
   text-transform: uppercase;
   font-weight: 600;
   font-size: 3.6rem;
@@ -55,14 +55,14 @@
 }
 .post-type-archive-project .archive-description p a {
   font-size: 1.2rem;
-  color: #ffffff;
+  color: #FFF;
 }
 .post-type-archive-project #filters {
   text-align: center;
   padding: 1rem;
 }
 .post-type-archive-project #filters a.filter {
-  border: 1px solid #9ca728;
+  border: 1px solid #9CA728;
   border-radius: 100%;
   font-size: 1rem;
   text-align: center;
@@ -102,8 +102,8 @@
 .post-type-archive-project #filters a.filter:hover,
 .post-type-archive-project #filters a.filter.active {
   text-decoration: none;
-  color: #ffffff;
-  background-color: #9ca728;
+  color: #FFF;
+  background-color: #9CA728;
 }
 .post-type-archive-project #filters a.filter:hover:after,
 .post-type-archive-project #filters a.filter:hover:before,
@@ -162,7 +162,7 @@
   text-shadow: 2px 2px 4px #383637;
 }
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-title a {
-  color: #ffffff;
+  color: #FFF;
 }
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-subtitle {
   width: 100%;
@@ -171,7 +171,7 @@
   font-size: 1.4rem;
   text-transform: none;
   text-align: center;
-  color: #ffffff;
+  color: #FFF;
   font-weight: 500;
   border: 0;
   text-shadow: 2px 2px 4px #383637;
@@ -183,7 +183,7 @@
   font-size: 1.6rem;
   line-height: 1.625;
   color: #454647;
-  background-color: #ffdf01;
+  background-color: #FFDF01;
   border-radius: 30px;
   border-bottom: 0;
   padding: 1rem 2rem;
@@ -195,7 +195,7 @@
 }
 .post-type-archive-project #portfolio-projects article .image-widget-background .fuzzybubble .entry-permalink a:hover {
   color: #454647;
-  background-color: #efa930;
+  background-color: #EFA930;
   border-bottom: 0;
   text-decoration: none;
 }
@@ -210,7 +210,7 @@
   cursor: pointer;
 }
 .post-type-archive-project #portfolio-projects article.more-projects .image-widget-background {
-  background: #999999;
+  background: #999;
 }
 .post-type-archive-project #portfolio-projects article.more-projects .image-widget-background .fuzzybubble {
   opacity: 1;
@@ -224,7 +224,7 @@
   text-shadow: 2px 2px 4px #383637;
 }
 .post-type-archive-project #portfolio-projects article.more-projects .image-widget-background .fuzzybubble .entry-title a {
-  color: #ffffff;
+  color: #FFF;
 }
 .post-type-archive-project #portfolio-projects article.more-projects .image-widget-background .fuzzybubble .entry-subtitle {
   width: 100%;
@@ -233,7 +233,7 @@
   font-size: 1.4rem;
   text-transform: none;
   text-align: center;
-  color: #ffffff;
+  color: #FFF;
   font-weight: 500;
   border: 0;
   text-shadow: 2px 2px 4px #383637;
