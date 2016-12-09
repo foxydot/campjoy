@@ -106,22 +106,21 @@ if (!class_exists('MSDCustomCPT')) {
             //here are some examples to get started with
             if(class_exists('MSDTestimonialCPT')){
                 $this->testimonial_class = new MSDTestimonialCPT();
-                register_activation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
-                register_deactivation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
             }
             if(class_exists('MSDFactsCPT')){
                 $this->fact_class = new MSDFactsCPT();
-                register_activation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
-                register_deactivation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
+            }
+            if(class_exists('MSDMemoryCPT')){
+                $this->memory_class = new MSDMemoryCPT();
             }
             if(class_exists('MSDTeamCPT')){
                 $this->team_class = new MSDTeamCPT();
                 if(class_exists('MSDTeamDisplay')){
                   $this->team_display_class = new MSDTeamDisplay();
                 }
-                register_activation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
-                register_deactivation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
             }
+            register_activation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
+            register_deactivation_hook( __FILE__, create_function('','flush_rewrite_rules();') );
         }
 
         /**

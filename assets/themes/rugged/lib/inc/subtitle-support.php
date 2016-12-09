@@ -15,7 +15,7 @@ function add_custom_metaboxes(){
     (
         'id' => '_subtitle',
         'title' => 'Subtitle',
-        'types' => array('post','page'),
+        'types' => array('post','page','memory'),
         'context' => 'normal', // same as above, defaults to "normal"
         'priority' => 'high', // same as above, defaults to "high"
         'template' => get_stylesheet_directory() . '/lib/template/subtitle-meta.php',
