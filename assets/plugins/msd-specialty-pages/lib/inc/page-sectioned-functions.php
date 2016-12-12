@@ -258,6 +258,7 @@ class MSDSectionedPage{
         }
         
         function enqueue_admin(){
+            /*TODO: Replace WP_PLUGIN_URL with plugins_url()*/
             $postid = $_GET['post'];
             $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
             if($template_file == 'page-sectioned.php'){
@@ -265,7 +266,8 @@ class MSDSectionedPage{
                 wp_enqueue_script('spectrum',WP_PLUGIN_URL.'/msd-specialty-pages/lib/js/spectrum.js',array('jquery'));
                 wp_enqueue_script('jquery-ui-core');
                 wp_enqueue_script('jquery-ui-sortable');
-                wp_enqueue_script('sectioned-admin',WP_PLUGIN_URL.'/msd-specialty-pages/lib/js/sectioned-input.js',array('jquery'));
+                wp_enqueue_script('jquery-ui-accordion');
+                wp_enqueue_script('sectioned-admin',WP_PLUGIN_URL.'/msd-specialty-pages/lib/js/sectioned-input.js',array('jquery','jquery-ui-sortable','jquery-ui-accordion'));
                 //css
                 wp_enqueue_style('spectrum',WP_PLUGIN_URL.'/msd-specialty-pages/lib/css/spectrum.css');
                 wp_enqueue_style('sectioned-admin',WP_PLUGIN_URL.'/msd-specialty-pages/lib/css/sectioned.css');

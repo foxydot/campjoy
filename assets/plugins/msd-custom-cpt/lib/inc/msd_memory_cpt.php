@@ -34,6 +34,7 @@ if (!class_exists('MSDMemoryCPT')) {
             add_filter( 'enter_title_here', array(&$this,'change_default_title') );
             
             add_shortcode('memory_grid', array(&$this,'memory_grid'));
+            add_shortcode('memory-grid', array(&$this,'memory_grid'));
         }
 
         function register_taxonomy_memory_type(){
@@ -92,7 +93,7 @@ if (!class_exists('MSDMemoryCPT')) {
                 'labels' => $labels,
                 'hierarchical' => false,
                 'description' => 'Memory',
-                'supports' => array( 'title', 'editor', 'author', 'thumbnail' ),
+                'supports' => array( 'title', 'editor', 'author', 'thumbnail' ,'genesis-cpt-archives-settings'),
                 'taxonomies' => array( 'memory_type' ),
                 'public' => true,
                 'show_ui' => true,
@@ -229,6 +230,89 @@ if (!class_exists('MSDMemoryCPT')) {
             }
         }       
         
+        function memory_loop(){
+            global $subtitle_metabox;
+            if(have_posts()){
+                while ( have_posts() ) {
+                    the_post();
+                    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+                    $background = $featured_image[0];
+                    $subtitle_metabox->the_meta($post->ID);
+                    $ret .= '<a href='.get_the_permalink( $post->ID ).' class="memory col-xs-12 col-sm-3">
+                    <div class="wrapper" style="background-image:url('.$background.')">
+                    <div class="fader">
+                    <div class="titles">
+                    <span class="name">' . $subtitle_metabox->get_the_value('subtitle') . '</span> 
+                    <span class="title">' . get_the_title( $post->ID ) . '</span>
+                    </div>
+                    </div>
+                    </div>
+                    </a>';
+                }
+                
+            if(strlen($ret) > 0){
+                $ret = '<div class="memory-grid row">'.$ret.'</div>
+                <style>
+                    .memory-grid .memory .wrapper{
+                        background-position: center center;
+                        background-size: cover; 
+                        background-repeat: no-repeat;
+                        min-height: 184px;
+                        border: 6px solid rgb(29, 57, 141);
+                        position: relative;
+                    }
+                    .memory-grid .memory .wrapper .fader{
+                        opacity: 0;
+                          -webkit-transition: all 0.5s ease;
+                          -moz-transition: all 0.5s ease;
+                          -ms-transition: all 0.5s ease;
+                          -o-transition: all 0.5s ease;
+                          transition: all 0.5s ease;
+                        background-color: rgba(255,255,255,0.8);
+                        position: absolute;
+                        bottom: 0;
+                        left: 0;
+                        right: 0;
+                        top: 0;
+                    }                    
+                    .memory-grid .memory:hover .wrapper .fader{
+                        opacity: 1;
+                    }
+                    .memory-grid .memory .wrapper .fader .titles{
+                        bottom: 30px;
+                        left: 30px;
+                        position: absolute;
+                        right: 30px;
+                        top: 30px;
+                        text-align: center;
+                        line-height: 1;
+                    }
+                    .memory-grid .memory .wrapper .fader .titles .name,
+                    .memory-grid .memory .wrapper .fader .titles .title{
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: pre-line;
+                        color: #2f2e2e;
+                        max-height: 3em;
+                        display: block;
+                    }
+                    .memory-grid .memory .wrapper .fader .titles .name:not(:empty),
+                    .memory-grid .memory .wrapper .fader .titles .title:not(:empty) {
+                        margin-top: 5px;
+                    }
+                    .memory-grid .memory .wrapper .fader .titles .name{
+                        font-size: 16px;
+                    }
+                    .memory-grid .memory .wrapper .fader .titles .title{
+                        font-size: 12px;
+                    }
+                </style>
+                ';
+            }
+            print $ret;
+            }
+        }
+        
         function memory_grid( $atts ){
             global $subtitle_metabox;
             extract( shortcode_atts( array(
@@ -247,21 +331,23 @@ if (!class_exists('MSDMemoryCPT')) {
             
             $ret = '';
             // The 2nd Loop
-            while ( $my_query->have_posts() ) {
-                $my_query->the_post();
-                $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
-                $background = $featured_image[0];
-                $subtitle_metabox->the_meta($my_query->post->ID);
-                $ret .= '<a href='.get_the_permalink( $my_query->post->ID ).' class="memory col-xs-12 col-sm-'.$bs_cols.'">
-                <div class="wrapper" style="background-image:url('.$background.')">
-                <div class="fader">
-                <div class="titles">
-                <span class="name">"' . $subtitle_metabox->get_the_value('subtitle') . '</span> 
-                <span class="title">' . get_the_title( $my_query->post->ID ) . '</span>
-                </div>
-                </div>
-                </div>
-                </a>';
+            if($my_query->have_posts()){
+                while ( $my_query->have_posts() ) {
+                    $my_query->the_post();
+                    $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
+                    $background = $featured_image[0];
+                    $subtitle_metabox->the_meta($my_query->post->ID);
+                    $ret .= '<a href='.get_the_permalink( $my_query->post->ID ).' class="memory col-xs-12 col-sm-'.$bs_cols.'">
+                    <div class="wrapper" style="background-image:url('.$background.')">
+                    <div class="fader">
+                    <div class="titles">
+                    <span class="name">' . $subtitle_metabox->get_the_value('subtitle') . '</span> 
+                    <span class="title">' . get_the_title( $my_query->post->ID ) . '</span>
+                    </div>
+                    </div>
+                    </div>
+                    </a>';
+                }
             }
             if(strlen($ret) > 0){
                 $ret = '<div class="memory-grid cols-'.$columns.' row">'.$ret.'</div>
@@ -298,7 +384,7 @@ if (!class_exists('MSDMemoryCPT')) {
                         right: 30px;
                         top: 30px;
                         text-align: center;
-                        line-height: 1.2;
+                        line-height: 1;
                     }
                     .memory-grid .memory .wrapper .fader .titles .name,
                     .memory-grid .memory .wrapper .fader .titles .title{
@@ -306,7 +392,8 @@ if (!class_exists('MSDMemoryCPT')) {
                         text-overflow: ellipsis;
                         white-space: pre-line;
                         color: #2f2e2e;
-                        max-height: 3.9em;
+                        max-height: 3em;
+                        display: block;
                     }
                     .memory-grid .memory .wrapper .fader .titles .name:not(:empty),
                     .memory-grid .memory .wrapper .fader .titles .title:not(:empty) {

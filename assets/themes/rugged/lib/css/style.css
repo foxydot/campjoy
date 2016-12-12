@@ -8680,6 +8680,9 @@ Site Footer
 .post-type-archive-testimonial .archive-title:before {
   content: 'k';
 }
+.post-type-archive-memory .archive-title:before {
+  content: 'A';
+}
 .subtitle-wrapper {
   background-color: #000;
   padding: 1rem 0;

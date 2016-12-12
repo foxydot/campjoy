@@ -16,6 +16,16 @@
                 <i>Please use a section name. This is used to produce identifying wrappers for the content!</i>
             </div>
         </div>
+        <div class="cell">  
+            <label>Hide Section</label>
+            <div class="input_container">
+                <?php $mb->the_field('section-hidden-bool'); ?>
+                <div class="ui-toggle-btn">
+                    <input type="checkbox" name="<?php $mb->the_name(); ?>" value="1"<?php $mb->the_checkbox_state('1'); ?>/> 
+                    <div class="handle" data-on="ON" data-off="OFF"></div>
+                </div>
+            </div>
+        </div>
         <div class="cell">
             <?php $mb->the_field('layout'); ?>
             <label><?php print $section_name; ?> Layout</label>            
