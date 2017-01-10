@@ -253,6 +253,10 @@ if (!class_exists('MSDMemoryCPT')) {
             if(strlen($ret) > 0){
                 $ret = '<div class="memory-grid row">'.$ret.'</div>
                 <style>
+                    .memory-grid .memory{
+                        padding-top: 1em;
+                        padding-bottom: 1em;
+                    }
                     .memory-grid .memory .wrapper{
                         background-position: center center;
                         background-size: cover; 
@@ -352,6 +356,10 @@ if (!class_exists('MSDMemoryCPT')) {
             if(strlen($ret) > 0){
                 $ret = '<div class="memory-grid cols-'.$columns.' row">'.$ret.'</div>
                 <style>
+                    .memory-grid .memory{
+                        padding-top: 1em;
+                        padding-bottom: 1em;
+                    }
                     .memory-grid .memory .wrapper{
                         background-position: center center;
                         background-size: cover; 
