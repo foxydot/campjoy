@@ -7,7 +7,7 @@
 		"uuidString": "4F84D934-58B6-4FAA-B0AF-808F939D25BA"
 		}
 	],
-"creatorBuild": "25479",
+"creatorBuild": "25704",
 "files": {
 	"\/archive-memory.php": {
 		"ft": 8192,
@@ -1452,34 +1452,42 @@
 	"\/lib\/img\/bkg-dots.png": {
 		"ft": 32768,
 		"iS": 200,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-dots.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/bkg-portfolio-sep-wht.png": {
 		"ft": 32768,
 		"iS": 1691,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-portfolio-sep-wht.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/bkg-search.png": {
 		"ft": 32768,
 		"iS": 416,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-search.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/bkg-shadow-dn.png": {
 		"ft": 32768,
 		"iS": 3706,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-shadow-dn.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/bkg-team.jpg": {
 		"ft": 16384,
@@ -1487,23 +1495,28 @@
 		"oA": 0,
 		"oAP": "\/lib\/img\/bkg-team.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/blockquote.png": {
 		"ft": 32768,
 		"iS": 766,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/blockquote.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/color-bar.png": {
 		"ft": 32768,
 		"iS": 1397,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/color-bar.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/default-banner.jpg": {
 		"ft": 16384,
@@ -1511,7 +1524,8 @@
 		"oA": 0,
 		"oAP": "\/lib\/img\/default-banner.jpg",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/favicon.ico": {
 		"ft": 8192,
@@ -1522,58 +1536,72 @@
 	"\/lib\/img\/glyphicons-halflings-white.png": {
 		"ft": 32768,
 		"iS": 8777,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/glyphicons-halflings-white.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/glyphicons-halflings.png": {
 		"ft": 32768,
 		"iS": 12799,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/glyphicons-halflings.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/gradient.png": {
 		"ft": 32768,
 		"iS": 174,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/gradient.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/icon-dot.png": {
 		"ft": 32768,
 		"iS": 116,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/icon-dot.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/icon-plus-white.png": {
 		"ft": 32768,
 		"iS": 146,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/icon-plus-white.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/icon-plus.png": {
 		"ft": 32768,
 		"iS": 152,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/icon-plus.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/logo.png": {
 		"ft": 32768,
 		"iS": 5484,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/logo.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/logo.svg": {
 		"ft": 2097152,
@@ -1588,50 +1616,78 @@
 	"\/lib\/img\/logo@2x.png": {
 		"ft": 32768,
 		"iS": 17198,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/logo@2x.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/mobile_button.png": {
 		"ft": 32768,
 		"iS": 1329,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/mobile_button.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/plus.png": {
 		"ft": 32768,
 		"iS": 1498,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/plus.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/responsivebg.png": {
 		"ft": 32768,
 		"iS": 1201,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/responsivebg.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/rss.png": {
 		"ft": 32768,
 		"iS": 526,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/rss.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
+		},
+	"\/lib\/img\/trees.ai": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lib\/img\/trees.ai",
+		"oF": 0
+		},
+	"\/lib\/img\/trees.png": {
+		"ft": 32768,
+		"iS": 24944,
+		"l": 1,
+		"oA": 0,
+		"oAP": "\/lib\/img\/trees.png",
+		"oF": 0,
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/img\/twitter-nav.png": {
 		"ft": 32768,
 		"iS": 881,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/lib\/img\/twitter-nav.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/lib\/inc\/devel.php": {
 		"ft": 8192,
@@ -2588,10 +2644,12 @@
 	"\/screenshot.png": {
 		"ft": 32768,
 		"iS": 28572,
+		"l": 1,
 		"oA": 0,
 		"oAP": "\/screenshot.png",
 		"oF": 0,
-		"opt": 0
+		"opt": 0,
+		"q": 100
 		},
 	"\/single-memory.php": {
 		"ft": 8192,
@@ -3266,6 +3324,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"no-await-in-loop": {
+			"active": 0,
+			"optionString": ""
+			},
 		"no-bitwise": {
 			"active": 0,
 			"optionString": "{'allow': ['~'], 'int32Hint': true}"
@@ -3284,6 +3346,10 @@
 			},
 		"no-class-assign": {
 			"active": 1,
+			"optionString": ""
+			},
+		"no-compare-neg-zero": {
+			"active": 0,
 			"optionString": ""
 			},
 		"no-cond-assign": {
@@ -3483,6 +3549,10 @@
 			"optionString": "{'grouping': false, 'allowCall': false }"
 			},
 		"no-mixed-spaces-and-tabs": {
+			"active": 0,
+			"optionString": ""
+			},
+		"no-multi-assign": {
 			"active": 0,
 			"optionString": ""
 			},
@@ -3762,6 +3832,10 @@
 			"active": 0,
 			"optionString": ""
 			},
+		"nonblock-statement-body-position": {
+			"active": 0,
+			"optionString": "'beside'"
+			},
 		"object-curly-newline": {
 			"active": 0,
 			"optionString": "{'ObjectExpression': {'multiline': true}, 'ObjectPattern': {'multiline': true}}"
@@ -3806,9 +3880,17 @@
 			"active": 0,
 			"optionString": "{'destructuring': 'any', 'ignoreReadBeforeAssign': false}"
 			},
+		"prefer-destructuring": {
+			"active": 0,
+			"optionString": "{'array': true, 'object': true}, {'enforceForRenamedProperties': false}"
+			},
 		"prefer-numeric-literals": {
 			"active": 0,
 			"optionString": ""
+			},
+		"prefer-promise-reject-errors": {
+			"active": 0,
+			"optionString": "{'allowEmptyReject': false}"
 			},
 		"prefer-rest-params": {
 			"active": 0,
@@ -3903,6 +3985,10 @@
 			"optionString": ""
 			},
 		"template-curly-spacing": {
+			"active": 0,
+			"optionString": "'never'"
+			},
+		"template-tag-spacing": {
 			"active": 0,
 			"optionString": "'never'"
 			},
@@ -4349,7 +4435,8 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"quality": 100
 		},
 	"languageDefaultsJS": {
 		"autoOutputAction": 0,
@@ -4442,7 +4529,9 @@
 		"autoOutputPathRelativePath": "",
 		"autoOutputPathReplace1": "",
 		"autoOutputPathReplace2": "",
-		"autoOutputPathStyle": 0
+		"autoOutputPathStyle": 0,
+		"enableLossy": 1,
+		"quality": 100
 		},
 	"languageDefaultsPUG": {
 		"autoOutputAction": 0,
