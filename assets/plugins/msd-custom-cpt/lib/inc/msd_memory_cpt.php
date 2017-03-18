@@ -237,6 +237,11 @@ if (!class_exists('MSDMemoryCPT')) {
                     the_post();
                     $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
                     $background = $featured_image[0];
+                    $size = '';
+                    if(empty($background)){
+                        $background = get_stylesheet_directory_uri().'/lib/img/trees.png';
+                        $size = 'background-size: 70%;';
+                    }
                     $subtitle_metabox->the_meta($post->ID);
                     $ret .= '<a href='.get_the_permalink( $post->ID ).' class="memory col-xs-12 col-sm-3">
                     <div class="wrapper" style="background-image:url('.$background.')">
@@ -249,9 +254,10 @@ if (!class_exists('MSDMemoryCPT')) {
                     </div>
                     </a>';
                 }
-                
             if(strlen($ret) > 0){
                 $ret = '<div class="memory-grid row">'.$ret.'</div>
+                <div><a class="add-memory button" href="/share-your-memory/">Share Your Memory</a></div>
+                
                 <style>
                     .memory-grid .memory{
                         padding-top: 1em;
@@ -262,6 +268,7 @@ if (!class_exists('MSDMemoryCPT')) {
                         background-size: cover; 
                         background-repeat: no-repeat;
                         min-height: 184px;
+                        background-color: rgb(29, 57, 141);
                         border: 6px solid rgb(29, 57, 141);
                         position: relative;
                     }
@@ -340,9 +347,14 @@ if (!class_exists('MSDMemoryCPT')) {
                     $my_query->the_post();
                     $featured_image = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'medium' );
                     $background = $featured_image[0];
+                    $size = '';
+                    if(empty($background)){
+                        $background = get_stylesheet_directory_uri().'/lib/img/trees.png';
+                        $size = 'background-size: 70%;';
+                    }
                     $subtitle_metabox->the_meta($my_query->post->ID);
                     $ret .= '<a href='.get_the_permalink( $my_query->post->ID ).' class="memory col-xs-12 col-sm-'.$bs_cols.'">
-                    <div class="wrapper" style="background-image:url('.$background.')">
+                    <div class="wrapper" style="background-image:url('.$background.');'.$size.'">
                     <div class="fader">
                     <div class="titles">
                     <span class="name">' . $subtitle_metabox->get_the_value('subtitle') . '</span> 
@@ -365,6 +377,7 @@ if (!class_exists('MSDMemoryCPT')) {
                         background-size: cover; 
                         background-repeat: no-repeat;
                         min-height: 184px;
+                        background-color: rgb(29, 57, 141);
                         border: 6px solid rgb(29, 57, 141);
                         position: relative;
                     }
