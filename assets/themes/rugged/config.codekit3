@@ -1725,6 +1725,12 @@
 		"oAP": "\/lib\/inc\/media.php",
 		"oF": 0
 		},
+	"\/lib\/inc\/memories.php": {
+		"ft": 8192,
+		"oA": 2,
+		"oAP": "\/lib\/inc\/memories.php",
+		"oF": 0
+		},
 	"\/lib\/inc\/mobile.php": {
 		"ft": 8192,
 		"oA": 0,

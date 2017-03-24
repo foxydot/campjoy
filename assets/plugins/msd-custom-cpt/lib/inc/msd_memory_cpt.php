@@ -332,10 +332,15 @@ if (!class_exists('MSDMemoryCPT')) {
                 'link' => true,
             ), $atts ) );
             $bs_cols = floor(12/$columns);
+            if($rows == -1 || $columns == -1){
+                $ppp = -1;
+            } else {
+                $ppp = $rows * $columns;
+            }
             $args = array(
                 'post_type' => 'memory',
-                'order_by' => 'rand',
-                'posts_per_page' => $rows * $columns,
+                'orderby' => 'rand',
+                'posts_per_page' => $ppp,
                 'update_post_term_cache' => false,
             );
             $my_query = new WP_Query($args);
