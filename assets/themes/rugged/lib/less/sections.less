@@ -76,98 +76,10 @@
     h2,h4,h5,h6 { color: @white; }
   }
   //Home Page
-  .section.hero{
-    min-height: 650px;
-    text-align: center;
-    .section-title{
-      margin-top: 500px;
-      h3{
-        text-shadow: 0 0 12px fade(@dkgrey, 80%);
-      }
-    }
-    .section-body{
-      color: @white;
-      text-shadow: 0 0 12px fade(@dkgrey, 80%);
-      .section-subtitle{
-        color: @white;
-        text-shadow: 0 0 12px fade(@dkgrey, 80%);
-      }
-      .button-wrapper{
-        .button{
-          background: fade(@mdgrey,0%);
-          border: 1px solid @white;
-          color: @white;
-          box-shadow: 0 0 12px fade(@dkgrey, 80%);
-          text-shadow: 0 0 12px fade(@dkgrey, 80%);
-          &:hover{
-            background: fade(@mdgrey,70%);
-          }
-        }
-      }
-    }
-  }
-  .section-service-menu{
-    padding:0;
-    .menu{
-      .make-row();
-      .menu-item{
-        .make-md-column(3);
-        text-align: center;
-        background-color: fade(@white,20%);
-        border-right: 1px solid fade(@white,80%);
-        font-size: 2.2rem;
-        text-shadow: 1px 1px 4px fade(@dkgrey,60%);
-        &:hover{
-          background-color: fade(@white,40%);
-        }
-        &:first-child{
-          border-left: 1px solid fade(@white,80%);
-        }
-        a, a:visited, a:hover{
-          color: @white;
-        }
-      }
-    }
-  }
-  .section.section-locations{
-    text-align: center;
-    padding: 6rem 0;
-    .location-title{
-      .customheader;
-      text-transform: uppercase;
-      color: @green;
-      font-size: 2.2rem;
-    }
-    .location-phone{
-      .customheader;
-    }
-  }
-  .section.section-twins{
-    background-position: 50% 100%;
-    text-align: center;
-    color: @white;
-    text-shadow: 0 0 4px @dkgrey;
-    h2{
-      margin:0;
-    }
-    .wrap{
-      position: relative;
-      min-height: 500px;
-      .hex-holder{
-        position: absolute;
-        top: 40%;
-        left: 50%;
-        width: 100px;
-        display: block;
-        i{
-          font-size: 1.2em;
-          width: 2em;
-          height: 2em;
-          line-height: 1.8;
-          border: 1px solid fade(@white,80%);
-          border-radius: 50%;
-          margin-bottom: 0.6em;
-        }
+  .section.section-features{
+    .section-content{
+      p.odd:not(.first-child){
+        min-height:150px;
       }
     }
   }

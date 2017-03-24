@@ -45,7 +45,8 @@ function msdsocial_theme_page ()
         'vine_link',
 		'sharethis_link',
 		'contact_link',
-		'show_feed',
+        'show_blog',
+        'show_feed',
 		'hours_sunday_open',
         'hours_sunday_close',
         'hours_monday_open',
@@ -60,7 +61,13 @@ function msdsocial_theme_page ()
         'hours_friday_close',
         'hours_saturday_open',
         'hours_saturday_close',
+        'notification_content',
+        'notification_position',
+        'notification_start_datetime',
+        'notification_end_datetime'
         );
+        
+        $options = apply_filters('msdlab_social_options',$options);
 		
 		foreach ( $options as $opt )
 		{
@@ -69,7 +76,10 @@ function msdsocial_theme_page ()
 		}			
 		 
 	}
-	add_submenu_page('options-general.php',__('Settings'), __('MSD Site Settings'), 'administrator', 'msdsocial-options', 'msdsocial_settings');
+    //give admin access to the settings
+    $role = get_role('administrator');
+    $role->add_cap('admin_msd_settings');
+	add_submenu_page('options-general.php',__('Settings'), __('MSD Site Settings'), 'admin_msd_settings', 'msdsocial-options', 'msdsocial_settings');
 }
 function msdsocial_settings()
 {
@@ -161,12 +171,12 @@ $states = array('ALABAMA'=>"AL",
 <form method="post" action="">
     <!-- Nav tabs -->
     <ul class="nav nav-tabs">
-      <li class="active"><a href="#social-media" data-toggle="tab">Social Media</a></li>
-      <li><a href="#primary" data-toggle="tab">Primary Location</a></li>
-      <li><a href="#locations" data-toggle="tab">Additional Locations</a></li>
-      <li><a href="#mailing" data-toggle="tab">Mailing</a></li>
-      <li><a href="#hours" data-toggle="tab">Business Hours</a></li>
-      <li><a href="#settings" data-toggle="tab">Plugin Settings</a></li>
+      <li class="active"><a href="#social-media" data-toggle="tab"><?php print apply_filters('msdlab_social_media_panel_title','Social Media'); ?></a></li>
+      <li><a href="#primary" data-toggle="tab"><?php print apply_filters('msdlab_social_address_panel_title','Primary Location'); ?></a></li>
+      <li><a href="#locations" data-toggle="tab"><?php print apply_filters('msdlab_social_additional_panel_title','Additional Locations'); ?></a></li>
+      <li><a href="#mailing" data-toggle="tab"><?php print apply_filters('msdlab_social_mailing_panel_title','Mailing'); ?></a></li>
+      <li><a href="#hours" data-toggle="tab"><?php print apply_filters('msdlab_social_hours_panel_title','Business Hours'); ?></a></li>
+      <li><a href="#notification" data-toggle="tab"><?php print apply_filters('msdlab_social_notification_panel_title','Notification Bar'); ?></a></li>
     </ul>
     
     <!-- Tab panes -->
@@ -186,8 +196,8 @@ $states = array('ALABAMA'=>"AL",
       <div class="tab-pane" id="hours">
            <?php include_once('settings-hours.php'); ?>
       </div>
-      <div class="tab-pane" id="settings">
-           <?php include_once('settings-plugin.php'); ?>
+      <div class="tab-pane" id="notification">
+           <?php include_once('settings-notification.php'); ?>
       </div>
     </div>
 		<p class="submit">

@@ -22,7 +22,7 @@ class MSDSectionedPage{
         /**
          * Initializes the plugin by setting filters and administration functions.
          */
-   function __construct() {      
+   function __construct() {    
         }
         
     function add_metaboxes(){
@@ -62,24 +62,24 @@ class MSDSectionedPage{
                 $parallax_ids[] = $slug;
             }
         }
-        $wrapped_title = trim($title) != ''?'<div class="section-title">
+        $wrapped_title = trim($title) != ''?apply_filters('msdlab_sectioned_page_output_title','<div class="section-title">
             <h3 class="wrap">
                 '.$title.'
             </h3>
-        </div>':'';
-        $subtitle = $section['content-area-subtitle'] !=''?'<h4 class="section-subtitle">'.$section['content-area-subtitle'].'</h4>':'';
+        </div>'):'';
+        $subtitle = $section['content-area-subtitle'] !=''?apply_filters('msdlab_sectioned_page_output_subtitle','<h4 class="section-subtitle">'.$section['content-area-subtitle'].'</h4>'):'';
         $header = apply_filters('the_content',$section['header-area-content']);
         $content = apply_filters('the_content',$section['content-area-content']);
         $footer = apply_filters('the_content',$section['footer-area-content']);
                 $float = $section['feature-image-float']!='none'?' class="align'.$section['feature-image-float'].'"':'';
         $featured_image = $section['content-area-image'] !=''?'<img src="'.$section['content-area-image'].'"'.$float.' />':'';
-        $classes = array(
+        $classes = apply_filters('msdlab_sectioned_page_output_classes',array(
             'section',
             'section-'.$slug,
             $section['css-classes'],
             'section-'.$eo,
             'clearfix',
-        );
+        ));
         //think about filtering the classes here
         $ret = '
         <div id="'.$slug.'" class="'.implode(' ', $classes).'"'.$background.'>
@@ -104,6 +104,21 @@ class MSDSectionedPage{
         //ts_data($section);
         global $parallax_ids;
         $eo = ($i+1)%2==0?'even':'odd';
+        $breakpoint = apply_filters('msdlab_column_breakpoint', 'sm');
+        switch($breakpoint){
+            case 'md':
+                $next = 'lg';
+                break;
+            case 'sm':
+                $next = 'md';
+                break;
+            case 'xs':
+                $next = 'sm';
+                break;
+            default:
+                $next = 'md';
+                break;
+        }
         $title = apply_filters('the_title',$section['content-area-title']);
         $section_name = $section['section-name']!=''?$section['section-name']:$title;
         $slug = sanitize_title_with_dashes(str_replace('/', '-', $section_name));
@@ -120,27 +135,27 @@ class MSDSectionedPage{
                 $parallax_ids[] = $slug;
             }
         }
-        $wrapped_title = trim($title) != ''?'<div class="section-title">
+        $wrapped_title = trim($title) != ''?apply_filters('msdlab_sectioned_page_output_title','<div class="section-title">
             <h3 class="wrap">
                 '.$title.'
             </h3>
-        </div>':'';
-        $subtitle = $section['content-area-subtitle'] !=''?'<h4 class="section-subtitle">'.$section['content-area-subtitle'].'</h4>':'';
-        $header = '<div class="section-header-area">'.apply_filters('the_content',$section['header-area-content']).'</div>';
-        $content = '<div class="section-content column-1 col-sm-12 col-md-'.$section['content-area-width'].'">'.apply_filters('the_content',$section['content-area-content']).'</div>';
-        $content2 = '<div class="section-content column-2 col-sm-12 col-md-'.$section['column-2-area-width'].'">'.apply_filters('the_content',$section['column-2-area-content']).'</div>';
-        $content3 = '<div class="section-content column-3 col-sm-12 col-md-'.$section['column-3-area-width'].'">'.apply_filters('the_content',$section['column-3-area-content']).'</div>';
-        $content4 = '<div class="section-content column-4 col-sm-12 col-md-'.$section['column-4-area-width'].'">'.apply_filters('the_content',$section['column-4-area-content']).'</div>';
-        $footer = '<div class="section-footer-area">'.apply_filters('the_content',$section['footer-area-content']).'</div>';
+        </div>'):'';
+        $subtitle = $section['content-area-subtitle'] !=''?apply_filters('msdlab_sectioned_page_output_subtitle','<h4 class="section-subtitle">'.$section['content-area-subtitle'].'</h4>'):'';
+        $header = $section['header-area-bool']?'<div class="section-header-area">'.apply_filters('the_content',$section['header-area-content']).'</div>':'';
+        $content = '<div class="section-content column-1 col-'.$breakpoint.'-12 col-'.$next.'-'.$section['content-area-width'].'">'.apply_filters('the_content',$section['content-area-content']).'</div>';
+        $content2 = '<div class="section-content column-2 col-'.$breakpoint.'-12 col-'.$next.'-'.$section['column-2-area-width'].'">'.apply_filters('the_content',$section['column-2-area-content']).'</div>';
+        $content3 = '<div class="section-content column-3 col-'.$breakpoint.'-12 col-'.$next.'-'.$section['column-3-area-width'].'">'.apply_filters('the_content',$section['column-3-area-content']).'</div>';
+        $content4 = '<div class="section-content column-4 col-'.$breakpoint.'-12 col-'.$next.'-'.$section['column-4-area-width'].'">'.apply_filters('the_content',$section['column-4-area-content']).'</div>';
+        $footer = $section['footer-area-bool']?'<div class="section-footer-area">'.apply_filters('the_content',$section['footer-area-content']).'</div>':'';
         $float = $section['feature-image-float']!='none'?' class="align'.$section['feature-image-float'].'"':'';
         $featured_image = $section['content-area-image'] !=''?'<img src="'.$section['content-area-image'].'"'.$float.' />':'';
-        $classes = array(
+        $classes = apply_filters('msdlab_sectioned_page_output_classes',array(
             'section',
             'section-'.$slug,
             $section['css-classes'],
             'section-'.$eo,
             'clearfix',
-        );
+        ));
         switch($section['layout']){
             case 'four-col':
                 $central_content = $content4;
@@ -215,6 +230,7 @@ class MSDSectionedPage{
         // build scenes
         <?php
             $i = 0;
+            if($parallax_ids):
             foreach($parallax_ids AS $p_id):
         ?>
         new ScrollScene({options:{triggerElement:"#<?php print $p_id; ?>"}})
@@ -223,6 +239,7 @@ class MSDSectionedPage{
         <?php 
             $i++;
             endforeach;
+            endif;
         ?>
             $("#floating_nav").sticky({ topSpacing: 0 });
         });
@@ -235,69 +252,25 @@ class MSDSectionedPage{
             $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
             if($template_file == 'page-sectioned.php'){
             ?><script type="text/javascript">
-                jQuery(function($){
-                    $("#wpa_loop-sections").sortable({
-                        change: function(){
-                            $("#warning").show();
-                        }
-                    });
-                    $("#postdivrich").after($("#_page_sectioned_metabox"));
-                    $(".colorpicker").spectrum({
-                        preferredFormat: "rgb",
-                        showAlpha: true,
-                        showInput: true,
-                        allowEmpty: true,
-                    });
-                    $('.cols-2').each(function(){
-                        var layout = $(this).parents('.wpa_group-sections').find($('select.layout')).val();
-                        if(layout == 'two-col'){
-                            $(this).show();
-                        }
-                    });
-                    $('.cols-3').each(function(){
-                        var layout = $(this).parents('.wpa_group-sections').find($('select.layout')).val();
-                        if(layout == 'three-col'){
-                            $(this).show();
-                        }
-                    });
-                    $('.cols-4').each(function(){
-                        var layout = $(this).parents('.wpa_group-sections').find($('select.layout')).val();
-                        if(layout == 'four-col'){
-                            $(this).show();
-                        }
-                    });
-                    $('.range-value').html(function(){
-                        var section = $(this).parents('.cell');
-                        var range = section.find('.input-range').val();
-                        $(this).html(range + '/12 columns');
-                    });
-                    $('select.layout').change(function(){
-                        var layout = $(this).val();
-                        var section = $(this).parents('.wpa_group-sections');
-                        section.find($('.cols-2, .cols-3, .cols-4')).hide();
-                        if(layout == 'two-col'){
-                            section.find($('.cols-2')).show();
-                        }
-                        if(layout == 'three-col'){
-                            section.find($('.cols-3')).show();
-                        }
-                        if(layout == 'four-col'){
-                            section.find($('.cols-4')).show();
-                        }
-                    });
-                    $('.input-range').change(function(){
-                        var range = $(this).val();
-                        var section = $(this).parents('.cell');
-                        section.find($('.range-value')).html(range + '/12 columns');
-                    });
-                });
+                
                 </script><?php
             }
         }
         
         function enqueue_admin(){
-            wp_enqueue_script('spectrum',WP_PLUGIN_URL.'/msd-specialty-pages/lib/js/spectrum.js',array('jquery'));
-            wp_enqueue_style('sectioned-admin',WP_PLUGIN_URL.'/msd-specialty-pages/lib/css/sectioned.css');
-            wp_enqueue_style('spectrum',WP_PLUGIN_URL.'/msd-specialty-pages/lib/css/spectrum.css');
+            /*TODO: Replace WP_PLUGIN_URL with plugins_url()*/
+            $postid = $_GET['post'];
+            $template_file = get_post_meta($postid,'_wp_page_template',TRUE);
+            if($template_file == 'page-sectioned.php'){
+                //js
+                wp_enqueue_script('spectrum',WP_PLUGIN_URL.'/msd-specialty-pages/lib/js/spectrum.js',array('jquery'));
+                wp_enqueue_script('jquery-ui-core');
+                wp_enqueue_script('jquery-ui-sortable');
+                wp_enqueue_script('jquery-ui-accordion');
+                wp_enqueue_script('sectioned-admin',WP_PLUGIN_URL.'/msd-specialty-pages/lib/js/sectioned-input.js',array('jquery','jquery-ui-sortable','jquery-ui-accordion'));
+                //css
+                wp_enqueue_style('spectrum',WP_PLUGIN_URL.'/msd-specialty-pages/lib/css/spectrum.css');
+                wp_enqueue_style('sectioned-admin',WP_PLUGIN_URL.'/msd-specialty-pages/lib/css/sectioned.css');
+            }
         }
 }

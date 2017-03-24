@@ -58,7 +58,7 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
   }
   
   
-  .section-title:before{
+  .section-title:before,.archive-title:before{
     .roicons;
     text-transform: none;
     content: '';
@@ -110,6 +110,16 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#1a1a1a', end
 .section-contact{
   .section-title:before{
     content: 'H';
+  }
+}
+.post-type-archive-testimonial{
+  .archive-title:before{
+    content: 'k';
+  }
+}
+.post-type-archive-memory{
+  .archive-title:before{
+    content: 'A';
   }
 }
 .subtitle-wrapper{
@@ -228,5 +238,12 @@ a.button{
   }
   &.note:before{
     content: 'G';
+  }
+}
+.form-allowed-tags{
+  display: none;
+  code{
+    display: block;
+    white-space: normal;
   }
 }

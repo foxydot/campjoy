@@ -26,9 +26,8 @@ function msdlab_alter_loop_params($query){
             $query->set('posts_per_page',-1);
             $query->set('numposts',-1);
         } elseif($query->is_post_type_archive('testimonial')){
-            $query->set('orderby','rand');
-            $query->set('posts_per_page',-1);
-            $query->set('numposts',-1);
+            $query->set('posts_per_page',4);
+            $query->set('numposts',4);
         }
     }
 }
@@ -242,7 +241,7 @@ function msdlab_do_section_title(){
         if(get_section_title()!=$post->post_title){
             add_action('genesis_entry_header','genesis_do_post_title',5);
         }
-        $banner = msdlab_get_thumbnail_url($post->ID,'full')?msdlab_get_thumbnail_url($post->ID,'full'):get_stylesheet_directory_uri().'/lib/img/default-banner.jpg';
+        $banner = msdlab_get_thumbnail_url($post->ID,'full') && is_page()?msdlab_get_thumbnail_url($post->ID,'full'):get_stylesheet_directory_uri().'/lib/img/default-banner.jpg';
         print '<div class="banner clearfix" style="background-image:url('.$banner.')">';
         print '<div class="texturize">';
         print '<div class="gradient">';
