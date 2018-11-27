@@ -221,7 +221,7 @@ if (!class_exists('MSDLocationCPT')) {
               foreach($posts AS $post){
                   $address = get_post_meta($post->ID, '_location_address', true);
                   $street = $address[0]['street']?$address[0]['street'].'<br />'.$address[0]['city'].', '.$address[0]['state']:'';
-                  $map = strlen($street)>0?'<div class="location-map"><a href="http://maps.google.com/?q='.str_replace('<br />', ', ', $street).'" target="_blank">Get Directions</a></div>':'';
+                  $map = strlen($street)>0?'<div class="location-map"><a href="//maps.google.com/?q='.str_replace('<br />', ', ', $street).'" target="_blank">Get Directions</a></div>':'';
                   $street = strlen($street)>0?'<div class="location-address">'.$street.'</div>':'';
 
                   $ret .= '<div class="col-md-'.$cols.' col-xs-12">
